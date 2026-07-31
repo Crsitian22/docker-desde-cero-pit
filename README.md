@@ -1,7 +1,7 @@
 # 🐳 Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)
 ### Universidad Nacional de Ingeniería (UNI) - Programa de Iniciación Tecnológica (PIT)
 **Docente:** Ing. Cristian Jampier Chileno Segundo | OTI - UNI  
-**Repositorio Oficial:** [github.com/7on2/docker-desde-cero-pit](https://github.com/7on2/docker-desde-cero-pit.git)
+**Repositorio Oficial:** [github.com/Crsitian22/docker-desde-cero-pit](https://github.com/Crsitian22/docker-desde-cero-pit.git)
 
 ---
 
@@ -80,7 +80,7 @@ Para ejecutar los laboratorios en tu máquina local se requiere:
 
 1. **Clonar este repositorio:**
    ```bash
-   git clone https://github.com/7on2/docker-desde-cero-pit.git
+   git clone https://github.com/Crsitian22/docker-desde-cero-pit.git
    cd docker-desde-cero-pit
    ```
 
