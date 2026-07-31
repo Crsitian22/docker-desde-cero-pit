@@ -1,87 +1,53 @@
-# 🐳 Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)
-### Universidad Nacional de Ingeniería (UNI) - Programa de Iniciación Tecnológica (PIT)
-**Docente:** Ing. Cristian Jampier Chileno Segundo | OTI - UNI  
-**Repositorio de Laboratorios:** [github.com/Crsitian22/docker-desde-cero-pit](https://github.com/Crsitian22/docker-desde-cero-pit.git)
+# Docker desde Cero: Crea y Despliega Aplicaciones
 
----
+Repositorio del curso **PIT 2026** para aprender Docker desde cero hasta levantar aplicaciones multi-contenedor con Docker Compose, Flask y PostgreSQL. Incluye clases resumidas, laboratorios por sesion, codigo base y material visual del curso.
 
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
-![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
-![UNI](https://img.shields.io/badge/UNI-PIT_2026-red?style=for-the-badge)
+> **Docente:** Ing. Cristian Chileno — OTI / UNI
 
----
+## Ruta De Aprendizaje
 
-## 📌 Descripción del Repositorio
-Este repositorio público contiene **el código fuente completo, archivos de configuración, Dockerfiles, compose.yml y laboratorios prácticos** para los estudiantes del curso **Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)** dictado en el Programa de Iniciación Tecnológica (PIT) de la Universidad Nacional de Ingeniería (UNI).
-
----
-
-## 🗺️ Estructura de Laboratorios por Sesión
-
-| Sesión | Tema | Tecnologías / Aprendizaje | Archivos del Laboratorio |
+| Sesion | Tema | Clase | Laboratorio |
 |---|---|---|---|
-| **Sesión 1** | Fundamentos y Tu Primera App | VM vs Contenedor, CLI (
-un, ps, stop), Nginx, App Flask | [codigos/sesion1/](codigos/sesion1/) |
-| **Sesión 2** | Dockerfile Profesional y Buenas Prácticas | Capas UnionFS, Caché, .dockerignore, Multi-Stage Build, Alpine | [codigos/sesion2/](codigos/sesion2/) |
-| **Sesión 3** | Orquestación Local con Docker Compose | compose.yml, DNS Interno, Variables .env, Flask + PostgreSQL | [codigos/sesion3/](codigos/sesion3/) |
-| **Sesión 4** | Redes, Persistencia y Backups SQL | Volúmenes Nombrados, Bind Mounts, Healthchecks, pg_dump | [codigos/sesion4/](codigos/sesion4/) |
-| **Sesión 5** | Reverse Proxy con Nginx y Producción | Reverse Proxy (proxy_pass), Aislamiento Multi-Red, docker stats | [codigos/sesion5/](codigos/sesion5/) |
-| **Sesión 6** | Multi-Entorno, Debugging y Despliegue | Multi-entorno (dev vs prod), Debugging Profesional, deploy.sh | [codigos/sesion6/](codigos/sesion6/) |
+| 01 | Contenedores desde cero | [Abrir](./clases/01-contenedores-desde-cero.md) | [Lab 01](./laboratorios/sesion1/README.md) |
+| 02 | Dockerfile profesional | [Abrir](./clases/02-dockerfile-profesional.md) | [Lab 02](./laboratorios/sesion2/README.md) |
+| 03 | Docker Compose y apps multi-contenedor | [Abrir](./clases/03-docker-compose.md) | [Lab 03](./laboratorios/sesion3/README.md) |
+| 04 | Redes, volumenes y persistencia | [Abrir](./clases/04-redes-volumenes-persistencia.md) | [Lab 04](./laboratorios/sesion4/README.md) |
+| 05 | Docker en produccion | [Abrir](./clases/05-docker-en-produccion.md) | [Labs finales](./laboratorios/sesion-final/labs-finales/README.md) |
+| 06 | Proyecto final y despliegue completo | [Abrir](./clases/06-proyecto-final.md) | [Labs finales](./laboratorios/sesion-final/labs-finales/README.md) |
 
----
+> El indice sigue el temario oficial y los slides actuales. La sesion final incluye laboratorios integradores para practicar en clase.
 
-## 📁 Estructura del Repositorio
+## Laboratorios
 
-`	ext
-docker-desde-cero-pit/
-├── README.md                      # Documentación del repositorio
-├── LICENSE                        # Licencia MIT
-├── .gitignore                     # Filtros para archivos temporales y secretos
-├── codigos/                       # Código fuente runnable de los laboratorios
-│   ├── sesion1/                   # Primera App Flask + Dockerfile
-│   ├── sesion2/                   # Dockerfile Multi-Stage optimizado
-│   ├── sesion3/                   # Docker Compose Flask + PostgreSQL
-│   ├── sesion4/                   # Volúmenes, Healthchecks y Backups SQL
-│   ├── sesion5/                   # Nginx Reverse Proxy + Multi-Red
-│   └── sesion6/                   # Multi-entorno (dev/prod) + script deploy.sh
-└── slides/                        # Referencia de diapositivas oficiales
-    └── README.md
-`
+| Lab | Objetivo | Codigo |
+|---|---|---|
+| [Sesion 1](./laboratorios/sesion1/README.md) | Construir y ejecutar una app Flask en contenedor | [codigo/sesion1](./codigo/sesion1/) |
+| [Sesion 2](./laboratorios/sesion2/README.md) | Optimizar Dockerfile, usar .dockerignore y tags | [codigo/sesion2](./codigo/sesion2/) |
+| [Sesion 3](./laboratorios/sesion3/README.md) | Levantar Flask + PostgreSQL con Compose | [codigo/sesion3](./codigo/sesion3/) |
+| [Sesion 4](./laboratorios/sesion4/README.md) | Aislar PostgreSQL, persistir datos y crear backups | [codigo/sesion4](./codigo/sesion4/) |
+| [Sesion final](./laboratorios/sesion-final/labs-finales/README.md) | Integrar Docker CLI, Dockerfile, Compose y produccion | [labs-finales](./laboratorios/sesion-final/labs-finales/) |
 
----
+## Material De Apoyo
 
-## ⚙️ Requisitos para la Clase
+| Material | Descripcion |
+|---|---|
+| [Slides completos](./material/) | Presentacion Beamer del curso. |
+| Libros recomendados | Por agregar. |
 
-1. **Docker Desktop / Docker Engine:**
-   - **Windows / macOS:** Instalar [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Habilitar WSL2 en Windows).
-   - **Linux:** Instalar [Docker Engine](https://docs.docker.com/engine/install/).
-2. **Git:**
-   - Instalar [Git](https://git-scm.com/) para clonar los ejercicios.
-3. **VS Code:**
-   - Editor recomendado con la extensión oficial de Docker.
+## Bonus: IA para Operaciones
 
----
+| Tema | Descripcion |
+|---|---|
+| [Inteligencia Artificial para Operaciones](./bonus-ia/README.md) | LLMs, tokens, agentes, MCP, skills, Claude, opencode y como integran con Docker e infraestructura |
 
-## 🚀 Cómo Clonar y Trabajar en Clase
+## Requisitos
 
-`ash
-# 1. Clonar el repositorio
-git clone https://github.com/Crsitian22/docker-desde-cero-pit.git
-cd docker-desde-cero-pit
+- Docker Desktop o Docker Engine instalado.
+- Docker Compose disponible como `docker compose`.
+- Terminal basica en Windows, Linux o macOS.
+- 4 GB de RAM minimo, 8 GB recomendado.
 
-# 2. Entrar a la carpeta de la sesión correspondiente (ejemplo: Sesión 1)
-cd codigos/sesion1
-docker build -t mi-flask:v1 .
-docker run --name flask-app -d -p 5000:5000 mi-flask:v1
+## Docente
 
-# 3. Probar en el navegador: http://localhost:5000
-`
-
----
-
-## 👨‍🏫 Docente
-- **Ing. Cristian Jampier Chileno Segundo**  
-- **Institución:** Universidad Nacional de Ingeniería (UNI) - OTI / CTIC  
-- **Programa:** PIT 2026 - 10ma Edición
+**Ing. Cristian Chileno** — OTI / Universidad Nacional de Ingenieria (UNI)
+Curso PIT 2026 — 10ma Edicion

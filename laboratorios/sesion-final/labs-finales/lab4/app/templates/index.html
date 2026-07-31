@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Tareas - Produccion</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 40px auto; background: #0d1117; color: #c9d1d9; }
+        h1 { color: #58a6ff; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px 12px; border: 1px solid #30363d; }
+        th { background: #161b22; }
+    </style>
+</head>
+<body>
+    <h1>Gestor de Tareas — Produccion</h1>
+    <p>Stack hardened con healthchecks, backups y limites de recursos.</p>
+    {% if error %}<p style="color:#f85149">Error: {{ error }}</p>{% endif %}
+    <table>
+        <tr><th>ID</th><th>Titulo</th><th>Estado</th></tr>
+        {% for t in tareas %}
+        <tr><td>{{ t[0] }}</td><td>{{ t[1] }}</td><td>{{ "OK" if t[2] else "Pendiente" }}</td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

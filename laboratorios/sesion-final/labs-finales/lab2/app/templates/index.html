@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestor de Tareas - Docker Labs UNI</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; background: #0d1117; color: #c9d1d9; }
+        h1 { color: #58a6ff; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px 12px; border: 1px solid #30363d; text-align: left; }
+        th { background: #161b22; }
+        .error { color: #f85149; }
+    </style>
+</head>
+<body>
+    <h1>Gestor de Tareas</h1>
+    <p>Aplicacion Flask + PostgreSQL — Docker Labs UNI PIT 2026</p>
+    {% if error %}
+        <p class="error">Error: {{ error }}</p>
+    {% endif %}
+    <table>
+        <tr><th>ID</th><th>Titulo</th><th>Completado</th></tr>
+        {% for t in tareas %}
+        <tr><td>{{ t[0] }}</td><td>{{ t[1] }}</td><td>{{ t[2] }}</td></tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
