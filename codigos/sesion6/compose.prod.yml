@@ -1,0 +1,30 @@
+services:
+  proxy:
+    image: nginx:alpine
+    container_name: pf_proxy_prod
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    restart: always
+    depends_on:
+      - web
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.multistage
+    container_name: pf_web_prod
+    restart: always
+    environment:
+      - FLASK_ENV=production
+      - DB_HOST=db
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    restart: always
