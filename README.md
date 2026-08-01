@@ -1,12 +1,24 @@
-# 🐳 Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)
+<div align="center">
 
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Docker Compose](https://img.shields.io/badge/Docker_Compose-0DB7ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-2.0+-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![Nginx](https://img.shields.io/badge/Nginx-1.27-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org/)
-[![OTI UNI](https://img.shields.io/badge/OTI--UNI-PIT_2026-B22222?style=for-the-badge)](https://www.uni.edu.pe)
+  <img src="https://raw.githubusercontent.com/docker/art/master/logo/v2/logo-v2-icon-full-color.png" alt="Docker Logo Moby" width="180" />
+
+  # 🐳 Docker desde Cero: Crea y Despliega Aplicaciones
+  ### 🚀 10ma Edición 2026 | Programa de Iniciación Tecnológica (PIT 2026)
+  **Oficina de Tecnologías de la Información (OTI) — Universidad Nacional de Ingeniería (UNI)**
+
+  ---
+
+  [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+  [![Docker Compose](https://img.shields.io/badge/Docker_Compose-0DB7ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
+  [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+  [![Flask](https://img.shields.io/badge/Flask-2.0+-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+  [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+  [![Nginx](https://img.shields.io/badge/Nginx-1.27-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org/)
+  [![OTI UNI](https://img.shields.io/badge/OTI--UNI-PIT_2026-B22222?style=for-the-badge)](https://www.uni.edu.pe)
+
+</div>
+
+<br/>
 
 Repositorio oficial del curso **Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)**, impartido en el **Programa de Iniciación Tecnológica (PIT 2026)** de la **Oficina de Tecnologías de la Información (OTI)** de la **Universidad Nacional de Ingeniería (UNI)**.
 
