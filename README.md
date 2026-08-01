@@ -27,10 +27,19 @@ Repositorio oficial del curso **Docker desde Cero: Crea y Despliega Aplicaciones
 
 ---
 
-## 📑 Manual de Comandos Rápido (Docker Cheat Sheet)
+## 🔗 Enlaces Oficiales y Descargas de Herramientas
 
-Para apoyar el aprendizaje práctico en cada sesión, descarga e inspecciona el manual de comandos rápido oficial:
-- 📄 **Descargar PDF:** [📁 Docker Cheat Sheet (Manual de Comandos PDF)](./recursos/docker-cheat-sheet.pdf)
+Para preparar tu entorno de trabajo antes de iniciar el curso, utiliza los siguientes enlaces oficiales de descarga e instalación:
+
+| Herramienta / Recurso | Descripción | Enlace Oficial |
+|---|---|:---:|
+| 🐳 **Docker Desktop** | Motor de Docker y GUI oficial para Windows / macOS | [Descargar Docker Desktop](https://www.docker.com/products/docker-desktop/) |
+| 🐧 **Instalación de WSL 2** | Entorno Kernel Linux nativo para Windows 10/11 | [Guía de Instalación WSL 2](https://learn.microsoft.com/es-es/windows/wsl/install) |
+| 🧩 **Docker Compose** | Documentación e instalación del orquestador Compose | [Documentación Docker Compose](https://docs.docker.com/compose/install/) |
+| ☁️ **Docker Hub** | Registro público oficial de imágenes de contenedores | [Ir a Docker Hub](https://hub.docker.com/) |
+| 📦 **VirtualBox** | Alternativa de virtualización si WSL 2 no funciona en tu equipo | [Descargar VirtualBox](https://www.virtualbox.org/wiki/Downloads) |
+| 💿 **Ubuntu Server ISO** | Imagen oficial ISO de Ubuntu Server para Máquinas Virtuales | [Descargar Ubuntu Server ISO](https://ubuntu.com/download/server) |
+| 📑 **Docker Cheat Sheet** | Manual de comandos rápido de Docker en PDF | [Descargar PDF](./recursos/docker-cheat-sheet.pdf) |
 
 ---
 
