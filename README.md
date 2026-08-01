@@ -27,18 +27,25 @@ Repositorio oficial del curso **Docker desde Cero: Crea y Despliega Aplicaciones
 
 ---
 
-## 🗺️ Estructura Completa del Curso por Sesión (1 a 6)
+## 📑 Manual de Comandos Rápido (Docker Cheat Sheet)
 
-Cada sesión del curso cuenta con su **Clase Teórica**, su **Trabajo/Laboratorio a Realizar**, su **Código Fuente de Ejemplo** y su **Guía Docente**:
+Para apoyar el aprendizaje práctico en cada sesión, descarga e inspecciona el manual de comandos rápido oficial:
+- 📄 **Descargar PDF:** [📁 Docker Cheat Sheet (Manual de Comandos PDF)](./recursos/docker-cheat-sheet.pdf)
 
-| Sesión | Tema Principal | 📖 Clase Teórica | 🧪 Trabajo / Lab a Realizar | 💻 Código Fuente | 🎙️ Guía Docente |
-|:---:|---|:---:|:---:|:---:|:---:|
-| **Sesión 01** | 🐳 **Contenedores desde Cero** | [Ver Clase](./clases/01-contenedores-desde-cero.md) | [Realizar Lab 01](./laboratorios/sesion1/README.md) | [Código S1](./codigo/sesion1/) | [Guía S1](./material/guias/guia_docente_sesion1.md) |
-| **Sesión 02** | 📦 **Dockerfile Profesional** | [Ver Clase](./clases/02-dockerfile-profesional.md) | [Realizar Lab 02](./laboratorios/sesion2/README.md) | [Código S2](./codigo/sesion2/) | [Guía S2](./material/guias/guia_docente_sesion2.md) |
-| **Sesión 03** | 🧩 **Docker Compose Multi-Contenedor** | [Ver Clase](./clases/03-docker-compose.md) | [Realizar Lab 03](./laboratorios/sesion3/README.md) | [Código S3](./codigo/sesion3/) | [Guía S3](./material/guias/guia_docente_sesion3.md) |
-| **Sesión 04** | 🌐 **Redes, Volúmenes y Persistencia** | [Ver Clase](./clases/04-redes-volumenes-persistencia.md) | [Realizar Lab 04](./laboratorios/sesion4/README.md) | [Código S4](./codigo/sesion4/) | [Guía S4](./material/guias/guia_docente_sesion4.md) |
-| **Sesión 05** | 🛡️ **Docker en Producción (Proxy & Multi-Stage)** | [Ver Clase](./clases/05-docker-en-produccion.md) | [Realizar Lab 05](./laboratorios/sesion5/README.md) | [Código S5](./codigo/sesion5/) | [Guía S5](./material/guias/guia_docente_sesion5.md) |
-| **Sesión 06** | 🚀 **Proyecto Final y Despliegue Completo** | [Ver Clase](./clases/06-proyecto-final.md) | [Realizar Lab 06](./laboratorios/sesion6/README.md) | [Código S6](./codigo/sesion6/) | [Guía S6](./material/guias/guia_docente_sesion6.md) |
+---
+
+## 🗺️ Ruta de Aprendizaje del Curso por Sesión (1 a 6)
+
+Cada sesión del curso cuenta con su **Clase Teórica**, su **Laboratorio / Ejercicio a Realizar** y su **Código Fuente de Ejemplo**:
+
+| Sesión | Tema Principal | 📖 Clase Teórica | 🧪 Trabajo / Lab a Realizar | 💻 Código Fuente |
+|:---:|---|:---:|:---:|:---:|
+| **Sesión 01** | 🐳 **Contenedores desde Cero** | [Ver Clase](./clases/01-contenedores-desde-cero.md) | [Realizar Lab 01](./laboratorios/sesion1/README.md) | [Código S1](./codigo/sesion1/) |
+| **Sesión 02** | 📦 **Dockerfile Profesional** | [Ver Clase](./clases/02-dockerfile-profesional.md) | [Realizar Lab 02](./laboratorios/sesion2/README.md) | [Código S2](./codigo/sesion2/) |
+| **Sesión 03** | 🧩 **Docker Compose Multi-Contenedor** | [Ver Clase](./clases/03-docker-compose.md) | [Realizar Lab 03](./laboratorios/sesion3/README.md) | [Código S3](./codigo/sesion3/) |
+| **Sesión 04** | 🌐 **Redes, Volúmenes y Persistencia** | [Ver Clase](./clases/04-redes-volumenes-persistencia.md) | [Realizar Lab 04](./laboratorios/sesion4/README.md) | [Código S4](./codigo/sesion4/) |
+| **Sesión 05** | 🛡️ **Docker en Producción (Proxy & Multi-Stage)** | [Ver Clase](./clases/05-docker-en-produccion.md) | [Realizar Lab 05](./laboratorios/sesion5/README.md) | [Código S5](./codigo/sesion5/) |
+| **Sesión 06** | 🚀 **Proyecto Final y Despliegue Completo** | [Ver Clase](./clases/06-proyecto-final.md) | [Realizar Lab 06](./laboratorios/sesion6/README.md) | [Código S6](./codigo/sesion6/) |
 
 ---
 
@@ -81,7 +88,7 @@ curl http://localhost:8080
 
 ---
 
-## 📂 Estructura del Repositorio
+## 📂 Estructura General del Repositorio
 
 ```text
 docker-desde-cero-pit/
@@ -100,20 +107,10 @@ docker-desde-cero-pit/
 │   ├── sesion4/
 │   ├── sesion5/
 │   └── sesion6/
-├── 📁 material/               # Material docente exclusivo
-│   └── guias/                 # Guías diapo por diapo (S1-S6) y banco de 108 evaluaciones
+├── 📁 recursos/               # Recursos del estudiante y Cheat Sheet oficial en PDF
+│   └── docker-cheat-sheet.pdf # Manual de comandos rápido de Docker en PDF
 └── 📄 README.md               # Portada oficial del curso
 ```
-
----
-
-## 📝 Banco de Evaluaciones y Tests (108 Preguntas)
-
-El curso incluye un banco completo de preguntas para el aula virtual y dinámicas de clase:
-- 📄 **Documento:** [`material/guias/evaluaciones_y_test_docker.md`](./material/guias/evaluaciones_y_test_docker.md)
-- 📋 **Contenido:**
-  - **72 Preguntas de Test Formativo** (12 por sesión de opción múltiple A, B, C, D con solucionario argumentado).
-  - **36 Preguntas de Quiz en Vivo** (6 por sesión para pausas activas durante la clase).
 
 ---
 
