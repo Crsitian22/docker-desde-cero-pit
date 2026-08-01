@@ -27,6 +27,14 @@ Repositorio oficial del curso **Docker desde Cero: Crea y Despliega Aplicaciones
 
 ---
 
+## 📑 Manual de Comandos Rápido (Docker Cheat Sheet PDF)
+
+Para consultar y descargar rápidamente la lista oficial de comandos prácticos de Docker que utilizaremos en cada clase:
+
+- 📄 **Descargar PDF Directo:** [📁 **Docker Cheat Sheet - Manual de Comandos Rápido (PDF)**](./recursos/docker-cheat-sheet.pdf)
+
+---
+
 ## 🔗 Enlaces Oficiales y Descargas de Herramientas
 
 Para preparar tu entorno de trabajo antes de iniciar el curso, utiliza los siguientes enlaces oficiales de descarga e instalación:
@@ -39,7 +47,6 @@ Para preparar tu entorno de trabajo antes de iniciar el curso, utiliza los sigui
 | ☁️ **Docker Hub** | Registro público oficial de imágenes de contenedores | [Ir a Docker Hub](https://hub.docker.com/) |
 | 📦 **VirtualBox** | Alternativa de virtualización si WSL 2 no funciona en tu equipo | [Descargar VirtualBox](https://www.virtualbox.org/wiki/Downloads) |
 | 💿 **Ubuntu Server ISO** | Imagen oficial ISO de Ubuntu Server para Máquinas Virtuales | [Descargar Ubuntu Server ISO](https://ubuntu.com/download/server) |
-| 📑 **Docker Cheat Sheet** | Manual de comandos rápido de Docker en PDF | [Descargar PDF](./recursos/docker-cheat-sheet.pdf) |
 
 ---
 
