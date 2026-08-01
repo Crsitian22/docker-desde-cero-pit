@@ -1,6 +1,6 @@
 # Guía del Taller Docker — Sesión Intensiva Integradora
 **Curso:** Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)
-**Docente:** Ing. Cristian Jampier Chileno Segundo | OTI - UNI
+**Docente:** Cristian Jampier Chileno Segundo | OTI - UNI
 
 ---
 

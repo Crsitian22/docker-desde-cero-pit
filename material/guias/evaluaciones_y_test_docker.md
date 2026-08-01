@@ -1,6 +1,6 @@
 # 📝 Banco Completo de Evaluaciones, Tests y Quizzes — Docker desde Cero (10ma Edición 2026)
 **Programa de Iniciación Tecnológica (PIT 2026) | OTI - UNI**  
-**Docente:** Ing. Cristian Jampier Chileno Segundo  
+**Docente:** Cristian Jampier Chileno Segundo  
 **Estructura por Sesión:**  
 - **12 Preguntas de Test Asíncrono / Evaluación Formativa** (con opciones múltiples A, B, C, D y solucionario argumentado).  
 - **6 Preguntas de Quiz de Clase / Pausa Activa** (preguntas rápidas para dinamizar la clase en vivo con solucionario).  
@@ -748,9 +748,11 @@
    * c) Porque protegen el servidor contra virus.
    * d) Porque evitan la necesidad de usar contraseñas en Git.
 
-7. **Al crear un script Bash de despliegue en Windows para ejecutar en un servidor Linux, ¿por qué motivo suele fallar con el error `: command not found`?**
+7. **Al crear un script Bash de despliegue en Windows para ejecutar en un servidor Linux, ¿por qué motivo suele fallar con el error `
+: command not found`?**
    * a) Por incompatibilidad de versiones de Python.
-   * b) Porque los editores de Windows guardan los saltos de línea con formato `CRLF` (`
+   * b) Porque los editores de Windows guardan los saltos de línea con formato `CRLF` (`
+
 `), mientras que Linux requiere formato `LF` (`
 `).
    * c) Porque Linux no soporta scripts Bash.
@@ -793,7 +795,8 @@
 4-b: `docker system prune` limpia contenedores detenidos, redes en desuso y capas huérfanas.  
 5-b: Agregar `--volumes` a `system prune` es peligroso porque borra volúmenes no asociados a contenedores vivos.  
 6-b: Los scripts de despliegue estandarizan el flujo de entrega continua garantizando ejecuciones sin error humano.  
-7-b: Los caracteres `CRLF` de Windows colocan retornos de carro `` invisibles que corrompen el intérprete de Linux.  
+7-b: Los caracteres `CRLF` de Windows colocan retornos de carro `
+` invisibles que corrompen el intérprete de Linux.  
 8-a: `dos2unix` convierte la codificación de fin de línea de archivos de texto al estándar POSIX/Linux (`LF`).  
 9-b: `set -euo pipefail` es la bandera de modo estricto en Bash que aborta la ejecución ante cualquier fallo.  
 10-b: `docker inspect` con plantillas Go (`--format`) extrae atributos JSON específicos como la dirección IP.  

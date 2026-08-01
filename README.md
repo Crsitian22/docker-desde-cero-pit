@@ -22,7 +22,7 @@
 
 Repositorio oficial del curso **Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)**, impartido en el **Programa de Iniciación Tecnológica (PIT 2026)** de la **Oficina de Tecnologías de la Información (OTI)** de la **Universidad Nacional de Ingeniería (UNI)**.
 
-> 👨‍🏫 **Instructor:** Ing. Cristian Jampier Chileno Segundo (Astra) — *OTI / Universidad Nacional de Ingeniería (UNI)*  
+> 👨‍🏫 **Instructor:** Cristian Jampier Chileno Segundo (Astra) — *OTI / Universidad Nacional de Ingeniería (UNI)*  
 > 🎯 **Objetivo del Curso:** Dominar la tecnología de contenedores Docker, creación de recetas Dockerfile profesionales, orquestación de servicios con Docker Compose, persistencia de datos en bases de datos PostgreSQL, imágenes optimizadas con Multi-Stage builds, Reverse Proxy Nginx y automatización de despliegues reproducibles.
 
 ---
@@ -128,7 +128,7 @@ El curso incluye un banco completo de preguntas para el aula virtual y dinámica
 
 ## 👨‍🏫 Información del Docente y Créditos
 
-- **Docente:** Ing. Cristian Jampier Chileno Segundo (Astra)
+- **Docente:** Cristian Jampier Chileno Segundo (Astra)
 - **Institución:** Oficina de Tecnologías de la Información (OTI) — Universidad Nacional de Ingeniería (UNI)
 - **Programa:** Programa de Iniciación Tecnológica (PIT 2026) — 10ma Edición
 - **Licencia:** Material educativo de acceso libre para la comunidad de la UNI.

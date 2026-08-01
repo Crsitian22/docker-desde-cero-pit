@@ -1,6 +1,6 @@
 # 🧪 Laboratorio 06: Proyecto Final y Despliegue Completo
 **Curso:** Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)  
-**Instructor:** Ing. Cristian Jampier Chileno Segundo | OTI - UNI  
+**Instructor:** Cristian Jampier Chileno Segundo | OTI - UNI  
 
 ## 🎯 Objetivos
 1. Integrar la arquitectura multi-entorno usando Compose Overrides (compose.yml base + compose.dev.yml / compose.prod.yml).

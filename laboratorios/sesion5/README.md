@@ -1,6 +1,6 @@
 # 🧪 Laboratorio 05: Docker en Producción (Nginx Reverse Proxy & Multi-Stage Builds)
 **Curso:** Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)  
-**Instructor:** Ing. Cristian Jampier Chileno Segundo | OTI - UNI  
+**Instructor:** Cristian Jampier Chileno Segundo | OTI - UNI  
 
 ## 🎯 Objetivos
 1. Implementar Nginx como Reverse Proxy frontal escuchando en el puerto 8080.

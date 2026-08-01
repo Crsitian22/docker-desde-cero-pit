@@ -1,6 +1,6 @@
 # 🎙️ Guía Docente Diapositiva por Diapositiva — Sesión 3: Docker Compose y Aplicaciones Multi-Contenedor
 **Curso:** Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)  
-**Instructor:** Ing. Cristian Jampier Chileno Segundo | OTI - UNI  
+**Instructor:** Cristian Jampier Chileno Segundo | OTI - UNI  
 **Programa:** Programa de Iniciación Tecnológica (PIT 2026) — Universidad Nacional de Ingeniería  
 **Total Diapositivas:** 25 Diapositivas  
 
