@@ -7,7 +7,7 @@
 ## 🏛️ Arquitectura de la Nube Privada (Drive + OnlyOffice)
 
 <p align="center">
-  <img src="arquitectura_nube_privada_drive_onlyoffice.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Nube Privada Drive OnlyOffice en Español"/>
+  <img src="arquitectura_nube_privada_drive_local.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Nube Privada Drive OnlyOffice en Español"/>
 </p>
 
 ```mermaid

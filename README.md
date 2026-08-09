@@ -51,7 +51,7 @@ Los estudiantes construyen y despliegan paso a paso las siguientes dos infraestr
 ### 🔹 2. Proyecto Final Capstone: Nube Privada Institucional (UNI Drive con Nextcloud + OnlyOffice + MariaDB + Redis)
 
 <p align="center">
-  <img src="imagenes/arquitectura_nube_privada_drive_onlyoffice.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Nube Privada Drive OnlyOffice en Español"/>
+  <img src="imagenes/arquitectura_nube_privada_drive_local.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Nube Privada Drive OnlyOffice en Español"/>
 </p>
 
 * **📂 Ver Archivos de Despliegue del Proyecto 2 (Drive):** [`./codigo/sesion6/proyecto_drive/`](./codigo/sesion6/proyecto_drive/)
