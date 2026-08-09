@@ -67,18 +67,20 @@ Cada sesión del curso cuenta con su **Clase Teórica**, su **Laboratorio / Ejer
 
 ## 🏛️ Arquitectura del Stack Final de Producción
 
-Durante el curso, los alumnos construyen paso a paso la siguiente infraestructura completa:
+<p align="center">
+  <img src="imagenes/arquitectura_stack_flask_postgres.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Stack Flask PostgreSQL en Español"/>
+</p>
 
 ```mermaid
 graph TD
-    Client["🌐 Navegador Web / Cliente (http://localhost:8080)"] -->|Puerto 8080:80| Nginx["🛡️ Nginx Reverse Proxy (nginx:1.27-alpine)"]
+    Client["🌐 Navegador Web / Cliente<br/>(http://localhost:8080)"] -->|Puerto 8080:80| Nginx["🛡️ Nginx Reverse Proxy<br/>(nginx:1.27-alpine)"]
     
-    subgraph Red Privada Docker ["🔒 Red Interna de Contenedores (backend_net)"]
-        Nginx -->|proxy_pass http://web:5000| Flask["🐍 App Web Flask (python:3.12-slim)"]
-        Flask -->|SQL Port 5432 - Hostname: db| Postgres[("🐘 PostgreSQL 16 DB (postgres:16)")]
+    subgraph RedPrivada ["🔒 Red Interna de Contenedores (backend_net)"]
+        Nginx -->|proxy_pass http://web:5000| Flask["🐍 App Web Flask<br/>(python:3.12-slim)"]
+        Flask -->|SQL Port 5432 - Hostname: db| Postgres[("🐘 PostgreSQL 16 DB<br/>(postgres:16)")]
     end
     
-    Postgres <-->|Persistencia de Datos| Vol[("💾 Volumen Nombrado: postgres_data")]
+    Postgres <-->|Persistencia de Datos| Vol[("💾 Volumen Nombrado:<br/>postgres_data")]
 ```
 
 ---
@@ -145,3 +147,34 @@ docker-desde-cero-pit/
 - **Institución:** Oficina de Tecnologías de la Información (OTI) — Universidad Nacional de Ingeniería (UNI)
 - **Programa:** Programa de Iniciación Tecnológica (PIT 2026) — 10ma Edición
 - **Licencia:** Material educativo de acceso libre para la comunidad de la UNI.
+
+
+---
+
+## ☁️ Proyecto Final Capstone Especial: Nube Privada Institucional (UNI Drive)
+
+<p align="center">
+  <img src="imagenes/arquitectura_nube_privada_drive_onlyoffice.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Nube Privada Drive OnlyOffice en Español"/>
+</p>
+
+Como cierre práctico del curso, los alumnos despliegan una plataforma de almacenamiento en la nube estilo Google Drive / OneDrive en producción usando **Nextcloud**, **MariaDB**, **Redis** y **Redes Privadas Isoladas**:
+
+```mermaid
+graph TD
+    Client["🌐 Navegador Web / Cliente<br/>(http://localhost:8080)"] -->|Puerto 8080:80| App["☁️ Nextcloud Server (Drive)<br/>(nextcloud:28-apache)"]
+    
+    subgraph FrontendNet ["🌐 Red Pública Frontend (drive_frontend_network)"]
+        App
+    end
+
+    subgraph BackendNet ["🔒 Red Privada Interna (drive_backend_network)"]
+        App -->|MySQL Port 3306| DB[("🗄️ MariaDB 10.11 DB<br/>(mariadb:10.11)")]
+        App -->|Redis Port 6379| Redis[("⚡ Redis 7 Cache<br/>(redis:7-alpine)")]
+    end
+
+    App <-->|Persistencia de Archivos| VolApp[("💾 Volumen: drive_nextcloud_storage")]
+    DB <-->|Persistencia de Base de Datos| VolDB[("💾 Volumen: drive_mariadb_storage")]
+    Redis <-->|Persistencia de Caché| VolRedis[("💾 Volumen: drive_redis_storage")]
+```
+
+- **📂 Código Fuente del Proyecto Drive:** [`./codigo/sesion6/proyecto_drive/`](./codigo/sesion6/proyecto_drive/)
