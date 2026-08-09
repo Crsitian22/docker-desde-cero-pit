@@ -28,7 +28,8 @@ Formar a los estudiantes e ingenieros en el diseño, empaquetamiento, orquestaci
 | **Sesión 03** | 🧩 **Docker Compose Multi-Contenedor** | [Ver Clase](./clases/03-docker-compose.md) | [Realizar Lab 03](./laboratorios/sesion3/README.md) | [Código S3](./codigo/sesion3/) |
 | **Sesión 04** | 🌐 **Redes, Volúmenes y Persistencia** | [Ver Clase](./clases/04-redes-volumenes-persistencia.md) | [Realizar Lab 04](./laboratorios/sesion4/README.md) | [Código S4](./codigo/sesion4/) |
 | **Sesión 05** | 🛡️ **Docker en Producción (Proxy & Multi-Stage)** | [Ver Clase](./clases/05-docker-en-produccion.md) | [Realizar Lab 05](./laboratorios/sesion5/README.md) | [Código S5](./codigo/sesion5/) |
-| **Sesión 06** | 🚀 **Proyecto Final y Despliegue Completo** | [Ver Clase](./clases/06-proyecto-final.md) | [Realizar Lab 06](./laboratorios/sesion6/README.md) | [Código S6](./codigo/sesion6/) |
+| **Sesión 06** | 🚀 **Proyecto Final 1: Stack Web Multi-Contenedor** | [Ver Clase](./clases/06-proyecto-final.md) | [Realizar Lab 06](./laboratorios/sesion6/README.md) | [Código S6](./codigo/sesion6/) |
+| **Proyecto Capstone** | ☁️ **Proyecto Final 2: Nube Privada (UNI Drive + OnlyOffice)** | [Ver Guía Drive](./laboratorios/sesion6/proyecto_drive/README.md) | [Realizar Proyecto Drive](./laboratorios/sesion6/proyecto_drive/README.md) | [Código Drive](./codigo/sesion6/proyecto_drive/) |
 
 ---
 
