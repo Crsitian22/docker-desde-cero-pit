@@ -58,7 +58,7 @@ docker compose ps
 
 ## 🌐 Configuración del Proxy Reverso Apache con SSL (Certbot en Producción)
 
-Para publicar la plataforma bajo un dominio institucional (ejemplo: `driveuni.uni.edu.pe`):
+Para el despliegue 100% local en tu equipo:
 
 ```bash
 # 1. Habilitar módulos de Proxy en Apache Host
@@ -67,10 +67,10 @@ sudo a2enmod proxy
 sudo a2enmod proxy_http
 
 # 2. Habilitar el sitio virtual
-sudo a2ensite driveuni.uni.edu.pe.conf
+sudo a2ensite localhost.conf
 
 # 3. Generar Certificado SSL Gratuito con Certbot
-sudo certbot --apache -d driveuni.uni.edu.pe
+# Acceso local: http://localhost:8080
 ```
 
 ---
@@ -80,5 +80,5 @@ sudo certbot --apache -d driveuni.uni.edu.pe
 2. Ve a **Apps ➔ Aplicaciones Oficiales** y activa la extensión **ONLYOFFICE**.
 3. En **Ajustes de Administración ➔ ONLYOFFICE**:
    - **Dirección del Document Editing Service:** `http://onlyoffice:80/` (o `http://localhost:8081`)
-   - **Clave Secreta (JWT Secret):** `driveuni_jwt_secret_key_2026`
+   - **Clave Secreta (JWT Secret):** `local_jwt_secret_key_2026`
 4. ¡Listo! Ahora todos los alumnos pueden crear y editar archivos de Word, Excel y PowerPoint colaborativamente desde la nube.

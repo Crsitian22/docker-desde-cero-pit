@@ -36,7 +36,7 @@ services:
       - "8081:80"
     environment:
       - JWT_ENABLED=true
-      - JWT_SECRET=driveuni_jwt_secret_key_2026
+      - JWT_SECRET=local_jwt_secret_key_2026
     volumes:
       - ./onlyoffice_data:/var/www/onlyoffice/Data
       - ./onlyoffice_logs:/var/log/onlyoffice
