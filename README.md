@@ -1,58 +1,24 @@
-<div align="center">
+# 🐳 Docker desde Cero: Crea y Despliega Aplicaciones en Producción (10ma Edición 2026)
 
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker Logo" width="220" />
+[![Docker](https://img.shields.io/badge/Docker-25.0+-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![Docker Compose](https://img.shields.io/badge/Docker_Compose-v2.x-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
+[![Nginx](https://img.shields.io/badge/Nginx-1.27-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.0-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![Nextcloud](https://img.shields.io/badge/Nextcloud-28.0-0082C9?style=for-the-badge&logo=nextcloud&logoColor=white)](https://nextcloud.com/)
+[![MariaDB](https://img.shields.io/badge/MariaDB-11.4-003545?style=for-the-badge&logo=mariadb&logoColor=white)](https://mariadb.org/)
+[![Redis](https://img.shields.io/badge/Redis-7.0-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
+[![Licencia](https://img.shields.io/badge/Licencia-MIT-green?style=for-the-badge)](./LICENSE)
 
-  # 🐳 Docker desde Cero: Crea y Despliega Aplicaciones
-  ### 🚀 10ma Edición 2026 | Programa de Iniciación Tecnológica (PIT 2026)
-  **Oficina de Tecnologías de la Información (OTI) — Universidad Nacional de Ingeniería (UNI)**
-
-  ---
-
-  [![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-  [![Docker Compose](https://img.shields.io/badge/Docker_Compose-0DB7ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
-  [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-  [![Flask](https://img.shields.io/badge/Flask-2.0+-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-  [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-  [![Nginx](https://img.shields.io/badge/Nginx-1.27-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org/)
-  [![OTI UNI](https://img.shields.io/badge/OTI--UNI-PIT_2026-B22222?style=for-the-badge)](https://www.uni.edu.pe)
-
-</div>
-
-<br/>
-
-Repositorio oficial del curso **Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)**, impartido en el **Programa de Iniciación Tecnológica (PIT 2026)** de la **Oficina de Tecnologías de la Información (OTI)** de la **Universidad Nacional de Ingeniería (UNI)**.
-
-> 👨‍🏫 **Instructor:** Cristian Jampier Chileno Segundo (Astra) — *OTI / Universidad Nacional de Ingeniería (UNI)*  
-> 🎯 **Objetivo del Curso:** Dominar la tecnología de contenedores Docker, creación de recetas Dockerfile profesionales, orquestación de servicios con Docker Compose, persistencia de datos en bases de datos PostgreSQL, imágenes optimizadas con Multi-Stage builds, Reverse Proxy Nginx y automatización de despliegues reproducibles.
+Bienvenido al repositorio oficial del curso **Docker desde Cero: Crea y Despliega Aplicaciones**, diseñado e impartido para la comunidad universitaria de la **Universidad Nacional de Ingeniería (UNI)** — Oficina de Tecnologías de la Información (OTI).
 
 ---
 
-## 📑 Manual de Comandos Rápido (Docker Cheat Sheet PDF)
-
-Para consultar y descargar rápidamente la lista oficial de comandos prácticos de Docker que utilizaremos en cada clase:
-
-- 📄 **Descargar PDF Directo:** [📁 **Docker Cheat Sheet - Manual de Comandos Rápido (PDF)**](./recursos/docker-cheat-sheet.pdf)
-
----
-
-## 🔗 Enlaces Oficiales y Descargas de Herramientas
-
-Para preparar tu entorno de trabajo antes de iniciar el curso, utiliza los siguientes enlaces oficiales de descarga e instalación:
-
-| Herramienta / Recurso | Descripción | Enlace Oficial |
-|---|---|:---:|
-| 🐳 **Docker Desktop** | Motor de Docker y GUI oficial para Windows / macOS | [Descargar Docker Desktop](https://www.docker.com/products/docker-desktop/) |
-| 🐧 **Instalación de WSL 2** | Entorno Kernel Linux nativo para Windows 10/11 | [Guía de Instalación WSL 2](https://learn.microsoft.com/es-es/windows/wsl/install) |
-| 🧩 **Docker Compose** | Documentación e instalación del orquestador Compose | [Documentación Docker Compose](https://docs.docker.com/compose/install/) |
-| ☁️ **Docker Hub** | Registro público oficial de imágenes de contenedores | [Ir a Docker Hub](https://hub.docker.com/) |
-| 📦 **VirtualBox** | Alternativa de virtualización si WSL 2 no funciona en tu equipo | [Descargar VirtualBox](https://www.virtualbox.org/wiki/Downloads) |
-| 💿 **Ubuntu Server ISO** | Imagen oficial ISO de Ubuntu Server para Máquinas Virtuales | [Descargar Ubuntu Server ISO](https://ubuntu.com/download/server) |
+## 🎯 Objetivo del Curso
+Formar a los estudiantes e ingenieros en el diseño, empaquetamiento, orquestación y despliegue de microservicios y plataformas empresariales en producción utilizando **Docker, Docker Compose, Nginx, PostgreSQL, Redis, MariaDB, Nextcloud y OnlyOffice / Collabora CODE**.
 
 ---
 
 ## 🗺️ Ruta de Aprendizaje del Curso por Sesión (1 a 6)
-
-Cada sesión del curso cuenta con su **Clase Teórica**, su **Laboratorio / Ejercicio a Realizar** y su **Código Fuente de Ejemplo**:
 
 | Sesión | Tema Principal | 📖 Clase Teórica | 🧪 Trabajo / Lab a Realizar | 💻 Código Fuente |
 |:---:|---|:---:|:---:|:---:|
@@ -65,7 +31,11 @@ Cada sesión del curso cuenta con su **Clase Teórica**, su **Laboratorio / Ejer
 
 ---
 
-## 🏛️ Arquitectura del Stack Final de Producción
+## 🏛️ ARQUITECTURAS DE LOS PROYECTOS FINALES EN PRODUCCIÓN
+
+Los estudiantes construyen y despliegan paso a paso las siguientes dos infraestructuras de nivel empresarial:
+
+### 🔹 1. Proyecto Final 1: Stack Web Multi-Contenedor (Flask + PostgreSQL + Nginx)
 
 <p align="center">
   <img src="imagenes/arquitectura_stack_flask_postgres.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Stack Flask PostgreSQL en Español"/>
@@ -83,6 +53,35 @@ graph TD
     Postgres <-->|Persistencia de Datos| Vol[("💾 Volumen Nombrado:<br/>postgres_data")]
 ```
 
+- **📂 Código Fuente del Proyecto Web:** [`./codigo/sesion6/`](./codigo/sesion6/)
+
+---
+
+### 🔹 2. Proyecto Final Capstone: Nube Privada Institucional (UNI Drive con Nextcloud + Collabora / OnlyOffice + MariaDB + Redis)
+
+<p align="center">
+  <img src="imagenes/arquitectura_nube_privada_drive_onlyoffice.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Nube Privada Drive OnlyOffice Collabora en Español"/>
+</p>
+
+```mermaid
+graph TD
+    Client["🌐 Navegador Web / Cliente<br/>(http://localhost:8080)"] -->|Puerto 8080:80| Nextcloud["☁️ Nextcloud Enterprise Server<br/>(nextcloud:latest)"]
+    Client -->|Puerto 8081:80| OnlyOffice["📝 OnlyOffice / Collabora CODE<br/>(Edición Colaborativa de Documentos)"]
+    
+    subgraph RedDrive ["🔒 Red Privada de Contenedores (drive_network)"]
+        Nextcloud -->|MySQL Port 3306| DB[("🗄️ MariaDB 11.4 Engine<br/>(mariadb:11.4)")]
+        Nextcloud -->|Redis Port 6379| Redis[("⚡ Redis Cache & Lock<br/>(redis:latest)")]
+        Nextcloud <-->|Integración API JWT| OnlyOffice
+    end
+
+    Nextcloud <-->|Archivos de Usuario| VolNC[("💾 Volumen: ./nextcloud_data")]
+    DB <-->|Base de Datos SQL| VolDB[("💾 Volumen: ./mariadb_data")]
+    Redis <-->|Caché de Sesiones| VolRedis[("💾 Volumen: ./redis_data")]
+    OnlyOffice <-->|Caché de Documentos| VolOO[("💾 Volumen: ./onlyoffice_data")]
+```
+
+- **📂 Código Fuente del Proyecto Drive Capstone:** [`./codigo/sesion6/proyecto_drive/`](./codigo/sesion6/proyecto_drive/)
+
 ---
 
 ## 🚀 Inicio Rápido
@@ -94,14 +93,14 @@ Para clonar el repositorio y ejecutar el laboratorio integrador final en tu máq
 git clone https://github.com/Crsitian22/docker-desde-cero-pit.git
 cd docker-desde-cero-pit
 
-# 2. Entrar a la carpeta del laboratorio final
-cd codigo/sesion6
+# 2. Entrar a la carpeta del proyecto final de Nube Privada Drive
+cd codigo/sesion6/proyecto_drive
 
 # 3. Levantar la infraestructura en segundo plano
-docker compose up -d --build
+docker compose up -d
 
-# 4. Probar desde el navegador
-curl http://localhost:8080
+# 4. Abrir en el navegador web
+http://localhost:8080
 ```
 
 ---
@@ -117,16 +116,11 @@ docker-desde-cero-pit/
 │   ├── sesion3/               # Stack Flask + PostgreSQL con Docker Compose
 │   ├── sesion4/               # Redes privadas, volúmenes y backups SQL
 │   ├── sesion5/               # Nginx Reverse Proxy y Multi-Stage Build
-│   └── sesion6/               # Proyecto final multi-entorno y script desplegar.sh
+│   └── sesion6/               # Proyecto final multi-entorno y proyecto_drive
+│       └── proyecto_drive/    # Stack Nube Privada (Nextcloud + MariaDB + Redis + OnlyOffice)
+├── 📁 imagenes/               # Diagramas 3D nítidos de arquitectura en español
 ├── 📁 laboratorios/           # Guías de trabajos y ejercicios a realizar por el alumno (Sesiones 1 a 6)
-│   ├── sesion1/
-│   ├── sesion2/
-│   ├── sesion3/
-│   ├── sesion4/
-│   ├── sesion5/
-│   └── sesion6/
 ├── 📁 recursos/               # Recursos del estudiante y Cheat Sheet oficial en PDF
-│   └── docker-cheat-sheet.pdf # Manual de comandos rápido de Docker en PDF
 └── 📄 README.md               # Portada oficial del curso
 ```
 
@@ -147,34 +141,3 @@ docker-desde-cero-pit/
 - **Institución:** Oficina de Tecnologías de la Información (OTI) — Universidad Nacional de Ingeniería (UNI)
 - **Programa:** Programa de Iniciación Tecnológica (PIT 2026) — 10ma Edición
 - **Licencia:** Material educativo de acceso libre para la comunidad de la UNI.
-
-
----
-
-## ☁️ Proyecto Final Capstone Especial: Nube Privada Institucional (UNI Drive)
-
-<p align="center">
-  <img src="imagenes/arquitectura_nube_privada_drive_onlyoffice.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Nube Privada Drive OnlyOffice en Español"/>
-</p>
-
-Como cierre práctico del curso, los alumnos despliegan una plataforma de almacenamiento en la nube estilo Google Drive / OneDrive en producción usando **Nextcloud**, **MariaDB**, **Redis** y **Redes Privadas Isoladas**:
-
-```mermaid
-graph TD
-    Client["🌐 Navegador Web / Cliente<br/>(http://localhost:8080)"] -->|Puerto 8080:80| App["☁️ Nextcloud Server (Drive)<br/>(nextcloud:28-apache)"]
-    
-    subgraph FrontendNet ["🌐 Red Pública Frontend (drive_frontend_network)"]
-        App
-    end
-
-    subgraph BackendNet ["🔒 Red Privada Interna (drive_backend_network)"]
-        App -->|MySQL Port 3306| DB[("🗄️ MariaDB 10.11 DB<br/>(mariadb:10.11)")]
-        App -->|Redis Port 6379| Redis[("⚡ Redis 7 Cache<br/>(redis:7-alpine)")]
-    end
-
-    App <-->|Persistencia de Archivos| VolApp[("💾 Volumen: drive_nextcloud_storage")]
-    DB <-->|Persistencia de Base de Datos| VolDB[("💾 Volumen: drive_mariadb_storage")]
-    Redis <-->|Persistencia de Caché| VolRedis[("💾 Volumen: drive_redis_storage")]
-```
-
-- **📂 Código Fuente del Proyecto Drive:** [`./codigo/sesion6/proyecto_drive/`](./codigo/sesion6/proyecto_drive/)
