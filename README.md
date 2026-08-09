@@ -5,6 +5,7 @@
 [![Nginx](https://img.shields.io/badge/Nginx-1.27-009639?style=for-the-badge&logo=nginx&logoColor=white)](https://nginx.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16.0-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![Nextcloud](https://img.shields.io/badge/Nextcloud-28.0-0082C9?style=for-the-badge&logo=nextcloud&logoColor=white)](https://nextcloud.com/)
+[![OnlyOffice](https://img.shields.io/badge/OnlyOffice-8.0-92278F?style=for-the-badge&logo=onlyoffice&logoColor=white)](https://www.onlyoffice.com/)
 [![MariaDB](https://img.shields.io/badge/MariaDB-11.4-003545?style=for-the-badge&logo=mariadb&logoColor=white)](https://mariadb.org/)
 [![Redis](https://img.shields.io/badge/Redis-7.0-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
 [![Licencia](https://img.shields.io/badge/Licencia-MIT-green?style=for-the-badge)](./LICENSE)
@@ -14,7 +15,7 @@ Bienvenido al repositorio oficial del curso **Docker desde Cero: Crea y Desplieg
 ---
 
 ## 🎯 Objetivo del Curso
-Formar a los estudiantes e ingenieros en el diseño, empaquetamiento, orquestación y despliegue de microservicios y plataformas empresariales en producción utilizando **Docker, Docker Compose, Nginx, PostgreSQL, Redis, MariaDB, Nextcloud y OnlyOffice / Collabora CODE**.
+Formar a los estudiantes e ingenieros en el diseño, empaquetamiento, orquestación y despliegue de microservicios y plataformas empresariales en producción utilizando **Docker, Docker Compose, Nginx, PostgreSQL, Redis, MariaDB, Nextcloud y OnlyOffice**.
 
 ---
 
@@ -41,66 +42,41 @@ Los estudiantes construyen y despliegan paso a paso las siguientes dos infraestr
   <img src="imagenes/arquitectura_stack_flask_postgres.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Stack Flask PostgreSQL en Español"/>
 </p>
 
-```mermaid
-graph TD
-    Client["🌐 Navegador Web / Cliente<br/>(http://localhost:8080)"] -->|Puerto 8080:80| Nginx["🛡️ Nginx Reverse Proxy<br/>(nginx:1.27-alpine)"]
-    
-    subgraph RedPrivada ["🔒 Red Interna de Contenedores (backend_net)"]
-        Nginx -->|proxy_pass http://web:5000| Flask["🐍 App Web Flask<br/>(python:3.12-slim)"]
-        Flask -->|SQL Port 5432 - Hostname: db| Postgres[("🐘 PostgreSQL 16 DB<br/>(postgres:16)")]
-    end
-    
-    Postgres <-->|Persistencia de Datos| Vol[("💾 Volumen Nombrado:<br/>postgres_data")]
-```
-
-- **📂 Código Fuente del Proyecto Web:** [`./codigo/sesion6/`](./codigo/sesion6/)
+* **📂 Ver Código Fuente:** [`./codigo/sesion6/`](./codigo/sesion6/)
+* **🧪 Ver Guía de Laboratorio:** [`./laboratorios/sesion6/`](./laboratorios/sesion6/)
 
 ---
 
-### 🔹 2. Proyecto Final Capstone: Nube Privada Institucional (UNI Drive con Nextcloud + Collabora / OnlyOffice + MariaDB + Redis)
+### 🔹 2. Proyecto Final Capstone: Nube Privada Institucional (UNI Drive con Nextcloud + OnlyOffice + MariaDB + Redis)
 
 <p align="center">
-  <img src="imagenes/arquitectura_nube_privada_drive_onlyoffice.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Nube Privada Drive OnlyOffice Collabora en Español"/>
+  <img src="imagenes/arquitectura_nube_privada_drive_onlyoffice.png" width="100%" alt="Diagrama 3D Nítido de Arquitectura Nube Privada Drive OnlyOffice en Español"/>
 </p>
 
-```mermaid
-graph TD
-    Client["🌐 Navegador Web / Cliente<br/>(http://localhost:8080)"] -->|Puerto 8080:80| Nextcloud["☁️ Nextcloud Enterprise Server<br/>(nextcloud:latest)"]
-    Client -->|Puerto 8081:80| OnlyOffice["📝 OnlyOffice / Collabora CODE<br/>(Edición Colaborativa de Documentos)"]
-    
-    subgraph RedDrive ["🔒 Red Privada de Contenedores (drive_network)"]
-        Nextcloud -->|MySQL Port 3306| DB[("🗄️ MariaDB 11.4 Engine<br/>(mariadb:11.4)")]
-        Nextcloud -->|Redis Port 6379| Redis[("⚡ Redis Cache & Lock<br/>(redis:latest)")]
-        Nextcloud <-->|Integración API JWT| OnlyOffice
-    end
-
-    Nextcloud <-->|Archivos de Usuario| VolNC[("💾 Volumen: ./nextcloud_data")]
-    DB <-->|Base de Datos SQL| VolDB[("💾 Volumen: ./mariadb_data")]
-    Redis <-->|Caché de Sesiones| VolRedis[("💾 Volumen: ./redis_data")]
-    OnlyOffice <-->|Caché de Documentos| VolOO[("💾 Volumen: ./onlyoffice_data")]
-```
-
-- **📂 Código Fuente del Proyecto Drive Capstone:** [`./codigo/sesion6/proyecto_drive/`](./codigo/sesion6/proyecto_drive/)
+* **📂 Ver Archivos de Despliegue del Proyecto 2 (Drive):** [`./codigo/sesion6/proyecto_drive/`](./codigo/sesion6/proyecto_drive/)
+* **🧪 Ver Guía Completa de Laboratorio del Proyecto 2:** [`./laboratorios/sesion6/proyecto_drive/`](./laboratorios/sesion6/proyecto_drive/)
+* **📄 Docker Compose listo para ejecutar:** [`./codigo/sesion6/proyecto_drive/docker-compose.yml`](./codigo/sesion6/proyecto_drive/docker-compose.yml)
 
 ---
 
-## 🚀 Inicio Rápido
+## 🚀 Inicio Rápido de la Nube Privada (Proyecto 2 - Drive)
 
-Para clonar el repositorio y ejecutar el laboratorio integrador final en tu máquina local:
+Para clonar el repositorio y ejecutar el **Proyecto Final 2 (Nube Privada UNI Drive)** en tu máquina local:
 
 ```bash
 # 1. Clonar el repositorio
 git clone https://github.com/Crsitian22/docker-desde-cero-pit.git
 cd docker-desde-cero-pit
 
-# 2. Entrar a la carpeta del proyecto final de Nube Privada Drive
+# 2. Entrar a la carpeta del Proyecto 2 (UNI Drive)
 cd codigo/sesion6/proyecto_drive
 
-# 3. Levantar la infraestructura en segundo plano
+# 3. Levantar los 4 contenedores en segundo plano (Nextcloud, OnlyOffice, MariaDB 11.4, Redis)
 docker compose up -d
 
-# 4. Abrir en el navegador web
-http://localhost:8080
+# 4. Probar en el navegador
+# Nextcloud Drive: http://localhost:8080
+# OnlyOffice Document Server: http://localhost:8081
 ```
 
 ---
@@ -116,10 +92,12 @@ docker-desde-cero-pit/
 │   ├── sesion3/               # Stack Flask + PostgreSQL con Docker Compose
 │   ├── sesion4/               # Redes privadas, volúmenes y backups SQL
 │   ├── sesion5/               # Nginx Reverse Proxy y Multi-Stage Build
-│   └── sesion6/               # Proyecto final multi-entorno y proyecto_drive
-│       └── proyecto_drive/    # Stack Nube Privada (Nextcloud + MariaDB + Redis + OnlyOffice)
+│   └── sesion6/               # Proyecto final 1 y proyecto_drive (Proyecto 2)
+│       └── proyecto_drive/    # 🚀 PROYECTO 2: Nube Privada (docker-compose.yml de Nextcloud + MariaDB + Redis + OnlyOffice)
 ├── 📁 imagenes/               # Diagramas 3D nítidos de arquitectura en español
 ├── 📁 laboratorios/           # Guías de trabajos y ejercicios a realizar por el alumno (Sesiones 1 a 6)
+│   └── sesion6/
+│       └── proyecto_drive/    # 🧪 Guías del Proyecto 2
 ├── 📁 recursos/               # Recursos del estudiante y Cheat Sheet oficial en PDF
 └── 📄 README.md               # Portada oficial del curso
 ```

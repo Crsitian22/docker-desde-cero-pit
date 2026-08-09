@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # 🗄️ Base de Datos Relacional (MariaDB 11.4 Engine)
+  mariadb:
+    image: mariadb:11.4
+    container_name: drive_mariadb
+    restart: unless-stopped
+    command: --transaction-isolation=READ-COMMITTED --log-bin-trust-function-creators=1
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_secure_password_2026
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=nextcloud_user_password_2026
+    volumes:
+      - ./mariadb_data:/var/lib/mysql
+    networks:
+      - drive_network
+
+  # ⚡ Memoria Caché de Sesiones y Bloqueo de Archivos
+  redis:
+    image: redis:latest
+    container_name: drive_redis
+    restart: unless-stopped
+    volumes:
+      - ./redis_data:/data
+    networks:
+      - drive_network
+
+  # 📝 Servidor de Edición de Documentos en Tiempo Real (OnlyOffice Document Server)
+  onlyoffice:
+    image: onlyoffice/documentserver:latest
+    container_name: drive_onlyoffice
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      - JWT_ENABLED=true
+      - JWT_SECRET=driveuni_jwt_secret_key_2026
+    volumes:
+      - ./onlyoffice_data:/var/www/onlyoffice/Data
+      - ./onlyoffice_logs:/var/log/onlyoffice
+      - ./onlyoffice_lib:/var/lib/onlyoffice
+    networks:
+      - drive_network
+
+  # ☁️ Servidor Nube Privada (Nextcloud Enterprise Server)
+  nextcloud:
+    image: nextcloud:latest
+    container_name: drive_nextcloud
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    depends_on:
+      - mariadb
+      - redis
+      - onlyoffice
+    environment:
+      - MYSQL_HOST=mariadb
+      - MYSQL_DATABASE=nextcloud
+      - MYSQL_USER=nextcloud
+      - MYSQL_PASSWORD=nextcloud_user_password_2026
+      - REDIS_HOST=redis
+    volumes:
+      - ./nextcloud_data:/var/www/html
+    networks:
+      - drive_network
+
+volumes:
+  nextcloud_data:
+  mariadb_data:
+  redis_data:
+  onlyoffice_data:
+  onlyoffice_logs:
+  onlyoffice_lib:
+
+networks:
+  drive_network:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+      com.docker.network.bridge.enable_ip_masquerade: "true"
