@@ -105,6 +105,25 @@ docker-desde-cero-pit/
 
 ---
 
+
+---
+
+## 🔗 Enlaces Oficiales de Descarga e Instalación
+
+Para preparar el entorno de trabajo durante las clases y laboratorios del curso, utiliza los siguientes enlaces a la documentación y descargas oficiales:
+
+### 🐳 1. Docker & Docker Compose
+* 🪟 **Docker Desktop para Windows (WSL2 Backend):** [Descargar Docker Desktop para Windows Oficial](https://www.docker.com/products/docker-desktop/)
+* 🍎 **Docker Desktop para macOS (Apple Silicon / Intel):** [Descargar Docker Desktop para Mac Oficial](https://docs.docker.com/desktop/install/mac-install/)
+* 🐧 **Docker Engine en Linux (Ubuntu Server / Debian):** [Guía Oficial de Instalación de Docker Engine en Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+* 🧩 **Docker Compose (Plugin v2):** [Guía Oficial de Instalación de Docker Compose](https://docs.docker.com/compose/install/)
+
+### 🐧 2. Sistemas Operativos, WSL2 e Hipervisores
+* 💻 **WSL2 (Windows Subsystem for Linux v2):** [Guía Oficial de Instalación de WSL2 (Microsoft Docs)](https://learn.microsoft.com/es-es/windows/wsl/install)
+* 📦 **Oracle VM VirtualBox:** [Descargar Oracle VM VirtualBox Oficial](https://www.virtualbox.org/wiki/Downloads)
+* 💿 **ISO de Ubuntu Server LTS:** [Descargar ISO Oficial de Ubuntu Server 24.04 LTS](https://ubuntu.com/download/server)
+
+
 ## 💻 Requisitos del Sistema
 
 - **Docker:** Docker Desktop (Windows/macOS) o Docker Engine (Linux).
