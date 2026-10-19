@@ -1,4 +1,4 @@
-# 🐳 Docker desde Cero: Crea y Despliega Aplicaciones en Producción (10ma Edición 2026)
+# 🐳 Docker desde Cero: Crea y Despliega Aplicaciones en Producción (11va Edición 2026)
 
 [![Docker](https://img.shields.io/badge/Docker-25.0+-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Docker Compose](https://img.shields.io/badge/Docker_Compose-v2.x-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://docs.docker.com/compose/)
@@ -137,5 +137,5 @@ Para preparar el entorno de trabajo durante las clases y laboratorios del curso,
 
 - **Docente:** Cristian Jampier Chileno Segundo (Astra)
 - **Institución:** Oficina de Tecnologías de la Información (OTI) — Universidad Nacional de Ingeniería (UNI)
-- **Programa:** Programa de Iniciación Tecnológica (PIT 2026) — 10ma Edición
+- **Programa:** Programa de Iniciación Tecnológica (PIT 2026) — 11va Edición
 - **Licencia:** Material educativo de acceso libre para la comunidad de la UNI.

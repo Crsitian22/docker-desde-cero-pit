@@ -1,4 +1,4 @@
-# 🎙️ EXTRACTO DE FUNDAMENTOS TÉCNICOS Y GUIÓN DEL DOCENTE (10MA EDICION 2026)
+# 🎙️ EXTRACTO DE FUNDAMENTOS TÉCNICOS Y GUIÓN DEL DOCENTE (11VA EDICION 2026)
 **Curso:** Docker desde Cero: Crea y Despliega Aplicaciones en Producción  
 **Instructor:** Cristian Jampier Chileno Segundo | OTI - UNI  
 **Propósito:** Apuntes de apoyo teórico y explicaciones profundas para el docente durante la clase en vivo.

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNI | PIT VIRTUAL - Docker desde 0</title>
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+        }
+
+        .card-container {
+            background: #1e293b;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Top Logos Header */
+        .logos-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-uni-svg {
+            width: 50px;
+            height: 55px;
+        }
+
+        .logo-divider {
+            width: 1px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .logo-docker-svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo-compose-svg {
+            width: 38px;
+            height: 38px;
+        }
+
+        /* Headings */
+        .badge-uni {
+            display: inline-block;
+            background: rgba(153, 0, 0, 0.3);
+            border: 1px solid #fbbf24;
+            color: #fbbf24;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.9rem;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.4rem;
+        }
+
+        p.subtitle {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 1.8rem;
+        }
+
+        /* Basic Info List */
+        .info-box {
+            background: #0f172a;
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: left;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+            font-size: 0.9rem;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .info-val {
+            font-family: 'JetBrains Mono', monospace;
+            color: #38bdf8;
+            font-weight: 600;
+        }
+
+        /* Button */
+        .btn-test {
+            width: 100%;
+            background: #0284c7;
+            color: #ffffff;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .btn-test:hover {
+            background: #0369a1;
+        }
+
+        #api-response {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            color: #34d399;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            display: none;
+            text-align: left;
+        }
+
+        footer {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        
+        <!-- Header con los 3 logos (UNI, Docker, Docker Compose) -->
+        <div class="logos-header">
+            <!-- Escudo UNI -->
+            <svg class="logo-uni-svg" viewBox="0 0 100 120" fill="none">
+                <path d="M50 5 L90 20 V65 C90 90 50 115 50 115 C50 115 10 90 10 65 V20 L50 5 Z" fill="#7B1113" stroke="#FBBF24" stroke-width="4"/>
+                <circle cx="50" cy="45" r="14" fill="#FBBF24"/>
+                <circle cx="50" cy="45" r="9" fill="#7B1113"/>
+                <path d="M36 68 H64 V82 H36 Z" fill="#FBBF24"/>
+                <text x="50" y="96" font-family="sans-serif" font-weight="900" font-size="14" fill="#FFFFFF" text-anchor="middle">UNI</text>
+            </svg>
+
+            <div class="logo-divider"></div>
+
+            <!-- Logo Docker -->
+            <svg class="logo-docker-svg" viewBox="0 0 24 24" fill="none">
+                <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.186v1.887c0 .102.083.185.185.185" fill="#38BDF8"/>
+                <path d="M.166 12.01c0 1.258.332 2.502.96 3.6 1.05 1.837 2.825 3.109 4.887 3.5 2.525.48 5.166.082 7.42-1.127" stroke="#38BDF8" stroke-width="2"/>
+            </svg>
+
+            <!-- Logo Docker Compose -->
+            <svg class="logo-compose-svg" viewBox="0 0 24 24" fill="none">
+                <rect x="2" y="3" width="9" height="8" rx="2" fill="#818CF8"/>
+                <rect x="13" y="3" width="9" height="8" rx="2" fill="#38BDF8"/>
+                <rect x="7.5" y="13" width="9" height="8" rx="2" fill="#6366F1"/>
+            </svg>
+        </div>
+
+        <div class="badge-uni">UNIVERSIDAD NACIONAL DE INGENIERÍA</div>
+        <h1>PIT VIRTUAL • Docker desde 0</h1>
+        <p class="subtitle">Demo básica de aplicación web en contenedor Docker (Sesión 2)</p>
+
+        <!-- Información Básica -->
+        <div class="info-box">
+            <div class="info-row">
+                <span class="info-label">🏛️ Universidad:</span>
+                <span class="info-val">UNI (Perú)</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">🐳 ID Contenedor:</span>
+                <span class="info-val">{{ container_id }}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">⚙️ Estado:</span>
+                <span class="info-val" style="color: #34d399;">Activo (Healthy)</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">🐍 Lenguaje / Web:</span>
+                <span class="info-val">Python {{ python_version }} (Flask)</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">🌐 Puerto:</span>
+                <span class="info-val">5000</span>
+            </div>
+        </div>
+
+        <!-- Botón Simple -->
+        <button class="btn-test" onclick="probarApi()">🚀 Probar Respuesta API</button>
+        <div id="api-response"></div>
+
+        <footer>
+            Curso <strong>Docker desde 0</strong> - 11va Edición • PIT VIRTUAL UNI
+        </footer>
+
+    </div>
+
+    <script>
+        async function probarApi() {
+            const div = document.getElementById('api-response');
+            div.style.display = 'block';
+            div.innerHTML = '⏳ Conectando...';
+
+            try {
+                const res = await fetch('/api/health');
+                const data = await res.json();
+                div.innerHTML = `<strong>✅ Estado:</strong> OK (200)<br><strong>Institución:</strong> ${data.institution}`;
+            } catch (err) {
+                div.innerHTML = '❌ Error de conexión';
+            }
+        }
+    </script>
+</body>
+</html>

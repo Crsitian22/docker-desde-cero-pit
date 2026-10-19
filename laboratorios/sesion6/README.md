@@ -1,5 +1,5 @@
 # 🧪 Laboratorio 06: Proyectos Finales en Producción
-**Curso:** Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)  
+**Curso:** Docker desde Cero: Crea y Despliega Aplicaciones (11va Edición 2026)  
 **Instructor:** Cristian Jampier Chileno Segundo | OTI - UNI  
 
 En este laboratorio integrador final, los alumnos ejecutan dos proyectos de nivel profesional:

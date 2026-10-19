@@ -1,5 +1,5 @@
 # 🧪 Laboratorio 05: Docker en Producción (Nginx Reverse Proxy & Multi-Stage Builds)
-**Curso:** Docker desde Cero: Crea y Despliega Aplicaciones (10ma Edición 2026)  
+**Curso:** Docker desde Cero: Crea y Despliega Aplicaciones (11va Edición 2026)  
 **Instructor:** Cristian Jampier Chileno Segundo | OTI - UNI  
 
 ## 🎯 Objetivos
