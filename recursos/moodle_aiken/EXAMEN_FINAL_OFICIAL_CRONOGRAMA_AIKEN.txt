@@ -1,0 +1,174 @@
+Un desarrollador reporta que su aplicación Flask falla al conectarse a PostgreSQL con el mensaje 'Connection refused'. Al revisar 'docker compose ps', notas que ambos contenedores están 'running'. ¿Cuál es el diagnóstico correcto?
+A. La imagen de PostgreSQL está corrupta y debe reconstruirse.
+B. El estado 'running' solo indica que el proceso contenedor arrancó, pero PostgreSQL toma unos segundos en inicializarse y aceptar conexiones en el puerto 5432; se requiere un mecanismo de espera o healthcheck.
+C. Docker no soporta conexiones TCP entre aplicaciones Python y PostgreSQL.
+D. El puerto 5432 del Host está bloqueado por el firewall de Windows.
+ANSWER: B
+
+Por qué la directiva 'USER 10001' es una buena práctica de seguridad frente a ejecutar como 'USER root' dentro de un contenedor en producción?
+A. Porque el usuario root consume el doble de memoria RAM y núcleos de CPU.
+B. Porque previene que una vulnerabilidad o escape de la aplicación dentro del contenedor conceda privilegios administrativos de superusuario (root) en el Kernel del Host anfitrión.
+C. Porque Docker Hub prohíbe subir imágenes que contengan el usuario root.
+D. Porque acelera la velocidad de descarga de la imagen en un 50%.
+ANSWER: B
+
+Cuál es la función exacta de un Reverse Proxy como Nginx en una arquitectura multi-contenedor de producción?
+A. Compilar el código de Flask en binarios de C++.
+B. Centralizar la recepción de peticiones externas, terminar conexiones TLS/SSL, servir contenido estático a alta velocidad y balancear peticiones hacia el backend.
+C. Realizar copias de seguridad de las bases de datos PostgreSQL.
+D. Administrar los volúmenes del sistema de archivos del sistema operativo anfitrión.
+ANSWER: B
+
+En una directiva de Nginx 'proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;', ¿qué información se le transfiere a la aplicación backend?
+A. La dirección IP original del cliente que realizó la petición HTTP antes de pasar por el proxy.
+B. La clave secreta del certificado SSL.
+C. El número de núcleos de CPU disponibles en el servidor web.
+D. La versión de Docker Engine instalada en el sistema.
+ANSWER: A
+
+Cuál es el beneficio de implementar Multi-Stage Builds en un Dockerfile para una aplicación compilada (Go, Java, TypeScript o Python)?
+A. Generar imágenes que funcionen tanto en 32 bits como en 64 bits de forma simultánea.
+B. Separar el entorno de compilación (con compiladores y librerías pesadas) del entorno final de ejecución, obteniendo una imagen de producción mínima, ligera y segura.
+C. Instalar automáticamente herramientas de depuración como gdb y strace.
+D. Evitar el uso de la directiva WORKDIR.
+ANSWER: B
+
+Cuál es la regla fundamental de sintaxis que se debe respetar estrictamente en los archivos YAML de Docker Compose?
+A. Colocar punto y coma ';' al final de cada instrucción.
+B. Respetar estrictamente la indentación mediante espacios en blanco (nunca utilizar tabuladores).
+C. Escribir todas las claves en letras mayúsculas.
+D. Encerrar todos los valores entre comillas triples.
+ANSWER: B
+
+Qué sucede con los datos almacenados en una base de datos PostgreSQL en contenedor si se ejecuta 'docker compose down' en un proyecto con un volumen nombrado 'postgres_data'?
+A. Se pierden permanentemente.
+B. Los datos permanecen intactos en el volumen nombrado en el Host y se reconectarán la próxima vez que se ejecute 'docker compose up'.
+C. Se transfieren automáticamente a la nube de Docker Hub.
+D. El archivo de base de datos se corrompe y requiere restauración manual.
+ANSWER: B
+
+Qué diferencia técnica existe entre 'docker compose down' y 'docker compose down -v'?
+A. No hay diferencia, son alias del mismo comando.
+B. 'docker compose down -v' destruye adicionalmente los volúmenes nombrados declarados en el archivo, eliminando los datos persistentes de la base de datos.
+C. 'docker compose down -v' activa el modo de diagnóstico detallado (verbose).
+D. 'docker compose down -v' solo detiene los servicios web pero mantiene la base de datos encendida.
+ANSWER: B
+
+Si ejecutas 'docker run -d -p 8080:80 nginx', ¿qué realiza exactamente la bandera '-p 8080:80'?
+A. Abre el puerto 80 del Host y bloquea el puerto 8080.
+B. Mapea y enruta las conexiones entrantes en el puerto 8080 de la máquina física hacia el puerto 80 del contenedor Nginx.
+C. Limita el ancho de banda a 8080 KB/s.
+D. Asigna la IP 80.80.80.80 al contenedor.
+ANSWER: B
+
+En Linux, ¿qué tecnologías del Kernel proporcionan aislamiento de procesos y restricción de recursos a Docker respectivamente?
+A. AppArmor y Cron.
+B. Namespaces (aislamiento de PID, NET, MNT) y Control Groups / cgroups (límites de CPU, RAM, I/O).
+C. IPTables y Syslog.
+D. Systemd y GRUB.
+ANSWER: B
+
+Qué sucede cuando un proceso dentro de un contenedor intenta modificar un archivo perteneciente a una capa de la imagen base?
+A. La imagen base se modifica de inmediato en el disco duro.
+B. Se activa el mecanismo Copy-on-Write (CoW), duplicando el archivo en la capa de lectura/escritura del contenedor antes de modificarlo, manteniendo la imagen base inmutable.
+C. El contenedor se bloquea con error de violación de segmento.
+D. Se reinicia el demonio dockerd.
+ANSWER: B
+
+Por qué en un Dockerfile es una buena práctica colocar 'COPY requirements.txt .' y 'RUN pip install' ANTES de 'COPY . .'?
+A. Para cumplir con el estándar PEP 8 de Python.
+B. Para aprovechar la caché de compilación de Docker: si el código fuente cambia pero requirements.txt no, Docker no reinstalará las librerías innecesariamente.
+C. Porque Docker no permite copiar archivos de código fuente después de instalar librerías.
+D. Para cifrar las dependencias instaladas.
+ANSWER: B
+
+En la Nube Privada Institucional (UNI Drive), ¿qué rol desempeña OnlyOffice Document Server?
+A. Administrar las cuotas de disco duro de los usuarios.
+B. Permitir la creación, visualización y edición colaborativa en tiempo real de documentos de ofimática (Word, Excel, PowerPoint) directamente en el navegador.
+C. Generar certificados SSL autofirmados.
+D. Servir como base de datos transaccional relacional.
+ANSWER: B
+
+Qué mecanismo de seguridad se utiliza para comunicar de forma autenticada Nextcloud con OnlyOffice Document Server?
+A. Autenticación NTLM de Windows.
+B. Tokens criptográficos JWT (JSON Web Tokens) firmados con una clave secreta compartida (JWT_SECRET).
+C. Certificados emitidos exclusivamente por la NASA.
+D. Bloqueo de puertos USB en el servidor anfitrión.
+ANSWER: B
+
+Qué comando permite ejecutar una copia de seguridad en caliente de la base de datos PostgreSQL dentro de su contenedor?
+A. docker backup postgresql
+B. docker exec -t <nombre_contenedor> pg_dump -U <usuario> <base_datos> > backup.sql
+C. docker save postgresql > backup.sql
+D. docker export postgresql > backup.sql
+ANSWER: B
+
+Qué directiva de Compose se utiliza para establecer el orden de encendido de los contenedores (por ejemplo, iniciar la BD antes que la web)?
+A. sequence_order:
+B. depends_on:
+C. start_after:
+D. link_priority:
+ANSWER: B
+
+Por qué una aplicación Flask dentro de un contenedor NO puede conectarse a PostgreSQL usando 'localhost'?
+A. Porque PostgreSQL rechaza por defecto conexiones locales.
+B. Porque dentro del contenedor de Flask, 'localhost' apunta a su propia interfaz de red loopback interna (127.0.0.1) y no al contenedor de la base de datos.
+C. Porque Docker desactiva el stack TCP/IP en modo bridge.
+D. Porque localhost requiere permisos de superusuario en Windows.
+ANSWER: B
+
+Qué comando de Docker permite visualizar el uso de CPU, memoria RAM y ancho de banda de red en tiempo real de todos los contenedores activos?
+A. docker ps -v
+B. docker stats
+C. docker top
+D. docker inspect --metrics
+ANSWER: B
+
+Qué directiva de Compose permite limitar el consumo de memoria RAM de un contenedor a 512 MB en producción?
+A. ram_limit: 512MB
+B. deploy.resources.limits.memory: 512M
+C. max_memory: 512
+D. memory_cap: 512M
+ANSWER: B
+
+Cuál es la función del archivo '.dockerignore'?
+A. Impedir que Git registre los cambios del archivo Dockerfile.
+B. Evitar que archivos temporales, dependencias locales (node_modules, venv), secretos (.env) y carpetas pesadas (.git) se envíen al contexto de construcción del Daemon de Docker.
+C. Desactivar las advertencias de compilación del motor de Docker.
+D. Ocultar los contenedores en la lista de 'docker ps'.
+ANSWER: B
+
+En Nginx, ¿qué directiva se utiliza para reenviar las peticiones entrantes hacia el contenedor de backend 'http://web:5000'?
+A. redirect_to http://web:5000;
+B. proxy_pass http://web:5000;
+C. forward http://web:5000;
+D. backend_route http://web:5000;
+ANSWER: B
+
+Cuál es la diferencia entre las instrucciones 'CMD' y 'ENTRYPOINT' en un Dockerfile?
+A. 'CMD' solo funciona en Windows y 'ENTRYPOINT' en Linux.
+B. 'ENTRYPOINT' define el ejecutable principal inmutable del contenedor, mientras que 'CMD' proporciona argumentos por defecto que pueden ser fácilmente sobreescritos desde la CLI de Docker.
+C. 'CMD' se ejecuta en tiempo de compilación y 'ENTRYPOINT' en tiempo de ejecución.
+D. No existe ninguna diferencia funcional.
+ANSWER: B
+
+Qué comando permite conectarse interactivamente a la terminal de un contenedor en ejecución con permisos de usuario?
+A. docker attach -u <contenedor>
+B. docker exec -it <contenedor> /bin/bash
+C. docker connect <contenedor>
+D. docker open <contenedor>
+ANSWER: B
+
+Qué driver de red en Docker permite que múltiples contenedores en una misma máquina se comuniquen por nombre de servicio mediante un DNS interno?
+A. host
+B. bridge (red personalizada)
+C. none
+D. macvlan
+ANSWER: B
+
+Qué comando de Docker permite inspeccionar detalladamente en formato JSON la configuración, IP, volúmenes y variables de entorno de un contenedor?
+A. docker details <contenedor>
+B. docker inspect <contenedor>
+C. docker dump <contenedor>
+D. docker scan <contenedor>
+ANSWER: B

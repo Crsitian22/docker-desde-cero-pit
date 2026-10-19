@@ -1,0 +1,167 @@
+En la arquitectura del Proyecto 1 (Stack Web Flask + Postgres + Nginx), ¿qué rol cumple Nginx como Reverse Proxy?
+A. Compilar el código fuente de Python en binarios ejecutables.
+B. Recibir todas las peticiones públicas HTTP/HTTPS, servir archivos estáticos eficientemente y delegar peticiones dinámicas al backend Flask.
+C. Administrar las transacciones SQL de la base de datos PostgreSQL.
+D. Generar backups automáticos de las cuentas de usuario.
+ANSWER: B
+
+En el Proyecto Capstone (Nube Privada UNI Drive), ¿cuáles son los 4 servicios que se orquestan en el docker-compose.yml?
+A. Apache, MySQL, PHPMyAdmin y WordPress.
+B. Nextcloud (Drive), OnlyOffice Document Server (Ofimática), MariaDB 11.4 (Base de Datos) y Redis (Caché y Bloqueo).
+C. Jenkins, GitLab, SonarQube y Nexus.
+D. Elasticsearch, Logstash, Kibana y Filebeat.
+ANSWER: B
+
+Qué función crítica cumple Redis en la suite de almacenamiento en la nube Nextcloud?
+A. Almacenar los archivos pesados como videos y PDFs.
+B. Servir como memoria en caché de alto rendimiento y gestionar el bloqueo transaccional de archivos (File Locking) para prevenir inconsistencias concurrentes.
+C. Traducir los documentos a formato PDF.
+D. Monitorear la temperatura del procesador del servidor.
+ANSWER: B
+
+En la integración entre Nextcloud y OnlyOffice Document Server, ¿cuál es el mecanismo de seguridad que previene peticiones no autorizadas entre ambos servidores?
+A. Un túnel SSH punto a punto.
+B. Tokens de autenticación basados en JSON Web Tokens (JWT) mediante una clave secreta compartida (JWT_SECRET).
+C. Bloqueo de direcciones MAC físicas.
+D. Desactivación permanente de los puertos HTTP.
+ANSWER: B
+
+En MariaDB 11.4 para Nextcloud, ¿por qué se utiliza el parámetro '--transaction-isolation=READ-COMMITTED'?
+A. Para impedir que los alumnos guarden archivos mayores a 10 MB.
+B. Para optimizar el manejo de transacciones concurrentes y cumplir con las recomendaciones oficiales de rendimiento y consistencia de Nextcloud.
+C. Para desactivar las contraseñas de los usuarios administradores.
+D. Para forzar a MariaDB a almacenar los datos en la memoria RAM únicamente.
+ANSWER: B
+
+En una arquitectura de producción con Docker Compose, ¿qué política de reinicio se debe configurar para que los contenedores arranquen automáticamente si el servidor físico se reinicia?
+A. restart: no
+B. restart: unless-stopped
+C. restart: on-error
+D. restart: manual
+ANSWER: B
+
+Por qué en el Proyecto UNI Drive los puertos de MariaDB (3306) y Redis (6379) NO están expuestos al Host con la directiva 'ports:'?
+A. Porque MariaDB y Redis son incompatibles con el protocolo TCP/IP.
+B. Por principio de mínimo privilegio y seguridad: solo necesitan comunicarse internamente a través de la red privada 'drive_network' con Nextcloud.
+C. Porque Docker bloquea los puertos menores a 8000.
+D. Para permitir que otros programas instalados en el host utilicen esos puertos sin conflicto.
+ANSWER: B
+
+Qué sucede si ejecutas 'docker compose down' en la carpeta del Proyecto 2 (UNI Drive)?
+A. Se borran para siempre todas las cuentas de usuario y archivos subidos por los alumnos.
+B. Se detienen y eliminan los contenedores y la red 'drive_network', pero los datos en los volúmenes (nextcloud_data, mariadb_data, etc.) permanecen intactos.
+C. Se desinstala Docker Desktop de la computadora.
+D. Se exporta un archivo comprimido a la papelera de reciclaje.
+ANSWER: B
+
+Qué comando se debe utilizar para verificar en tiempo real los logs generados por el contenedor de OnlyOffice Document Server?
+A. docker compose logs -f onlyoffice
+B. docker view logs onlyoffice
+C. docker cat onlyoffice.log
+D. docker compose print onlyoffice
+ANSWER: A
+
+En la configuración de Reverse Proxy para OnlyOffice y Nextcloud con Apache, ¿qué módulos deben habilitarse obligatoriamente en Linux?
+A. rewrite, mod_security y ssl
+B. proxy, proxy_http y headers
+C. cgi, perl y php7
+D. virtualbox, kvm y qemu
+ANSWER: B
+
+Qué directiva de configuración en Nginx o Apache permite habilitar la subida de archivos pesados (mayores a 500 MB o 1 GB) en la Nube Privada?
+A. max_file_length 1G;
+B. client_max_body_size 1024M;
+C. limit_rate_upload 1G;
+D. buffer_size_unlimited true;
+ANSWER: B
+
+En el Proyecto 1 (Flask + PostgreSQL), ¿cómo se asegura que PostgreSQL ejecute automáticamente los scripts SQL iniciales de creación de tablas al arrancar por primera vez?
+A. Ejecutando manualmente los scripts mediante 'docker exec'.
+B. Mapeando el archivo init.sql en el directorio reservado '/docker-entrypoint-initdb.d/' del contenedor de PostgreSQL.
+C. Escribiendo las sentencias SQL en el archivo Dockerfile.
+D. Pasando el script SQL en una variable de entorno de una sola línea.
+ANSWER: B
+
+Qué sucede si dos contenedores en la misma red de Docker intentan registrarse con el mismo nombre de contenedor (container_name)?
+A. Docker los fusiona en un solo proceso multihilo.
+B. Docker genera un error de conflicto de nombres y el segundo contenedor no podrá crearse ni arrancar.
+C. El segundo contenedor reemplaza silenciosamente al primero.
+D. El sistema operativo asigna un sufijo aleatorio de forma automática.
+ANSWER: B
+
+En un despliegue multi-contenedor con Compose, ¿qué función cumple la opción 'external: true' dentro de la sección 'networks:'?
+A. Indica que la red debe conectarse directamente a la nube de AWS.
+B. Indica a Compose que la red ya fue creada previamente (fuera del proyecto) y no debe intentar crearla ni destruirla con 'down'.
+C. Fuerza a que la red sea accesible desde cualquier parte del mundo sin cortafuegos.
+D. Cifra el tráfico de la red con un certificado SSL externo.
+ANSWER: B
+
+Cuál es la ventaja de utilizar perfiles (profiles) en archivos Docker Compose en arquitecturas avanzadas?
+A. Acelerar la descarga de imágenes desde Docker Hub.
+B. Habilitar o deshabilitar selectivamente grupos de servicios (ejemplo: perfil debug, perfil test, perfil metrics) sin tener manifiestos YAML duplicados.
+C. Asignar diferentes contraseñas a los desarrolladores del equipo.
+D. Cambiar el idioma de los logs de inglés a español.
+ANSWER: B
+
+Cómo se ejecuta una copia de seguridad rápida de la base de datos MariaDB de la Nube Privada directamente desde la terminal del Host?
+A. docker save mariadb_data > backup.tar
+B. docker exec drive_mariadb mariadb-dump -u root -p<password> nextcloud > backup_drive.sql
+C. docker copy drive_mariadb:/var/lib/mysql .
+D. docker snapshot drive_mariadb
+ANSWER: B
+
+Cuál es la diferencia entre utilizar la directiva 'COPY --link' de BuildKit y la directiva 'COPY' tradicional?
+A. 'COPY --link' permite copiar archivos desde servidores FTP remotos.
+B. 'COPY --link' crea capas independientes desacopladas de las capas previas, permitiendo reutilizar la caché incluso si capas anteriores cambiaron.
+C. 'COPY --link' crea accesos directos de Windows en el escritorio.
+D. No existe diferencia alguna en tiempo de construcción.
+ANSWER: B
+
+Qué variable de entorno en Nextcloud define los dominios o IPs autorizadas desde las cuales los usuarios pueden iniciar sesión?
+A. NEXTCLOUD_HOSTS
+B. NEXTCLOUD_TRUSTED_DOMAINS
+C. ALLOWED_HOSTS_LIST
+D. SECURE_LOGIN_ORIGINS
+ANSWER: B
+
+Por qué en entornos empresariales se prefiere orquestar contenedores con 'docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d'?
+A. Porque Compose no permite ejecutar contenedores si no se especifican dos archivos.
+B. Porque permite mantener un archivo base común con la definición de servicios y sobreescribir configuraciones específicas de producción (recursos, logs, dominios) limpiamente.
+C. Para duplicar la memoria RAM asignada a los procesos.
+D. Porque es obligatorio para activar el soporte de Docker Desktop.
+ANSWER: B
+
+Si el contenedor de OnlyOffice no carga el editor de texto y muestra un error de 'Error de descarga del documento', ¿cuál es la causa más común?
+A. Nextcloud tiene configurado el disco duro lleno.
+B. OnlyOffice no puede resolver el hostname de Nextcloud a través de la red de Docker o la clave JWT_SECRET no coincide en ambos lados.
+C. La laptop del alumno no tiene instalado Microsoft Office 365.
+D. Docker Compose desinstaló la extensión de PHP.
+ANSWER: B
+
+Qué comando de Compose permite reiniciar únicamente el servicio de base de datos 'mariadb' sin afectar a Nextcloud ni a OnlyOffice?
+A. docker compose reload mariadb
+B. docker compose restart mariadb
+C. docker restart all mariadb
+D. docker compose refresh mariadb
+ANSWER: B
+
+En producción, ¿qué driver de logging se recomienda en Compose para evitar que los archivos de logs saturen el disco duro del servidor?
+A. driver: syslog con formato binario.
+B. driver: json-file con opciones 'max-size' (ej. 10m) y 'max-file' (ej. 3).
+C. driver: none para desactivar todos los mensajes.
+D. driver: text-plain sin rotación.
+ANSWER: B
+
+Cuál es la principal diferencia entre Docker Compose y una plataforma de orquestación en clúster como Kubernetes o Docker Swarm?
+A. Compose solo funciona en sistemas macOS y Kubernetes en Linux.
+B. Docker Compose está diseñado para gestionar contenedores en un único host (nodo individual), mientras que Kubernetes/Swarm orquestan en clústeres multi-nodo con alta disponibilidad y auto-escalado.
+C. Docker Compose requiere tarjetas de video dedicadas.
+D. Kubernetes no utiliza contenedores Docker.
+ANSWER: B
+
+Cuál es el comando recomendado para evaluar el consumo de memoria RAM y CPU en tiempo real de todos los contenedores en ejecución?
+A. docker top -a
+B. docker stats
+C. docker system df
+D. docker inspect --usage
+ANSWER: B

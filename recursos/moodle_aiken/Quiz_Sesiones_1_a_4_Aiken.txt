@@ -1,0 +1,139 @@
+¿Cuál es la diferencia de arquitectura fundamental entre una Máquina Virtual (VM) y un Contenedor Docker?
+A. Las VMs son más ligeras y consumen menos memoria RAM que los contenedores.
+B. Las VMs virtualizan el hardware y requieren un Sistema Operativo Invitado (Guest OS) completo, mientras que los contenedores virtualizan el SO y comparten el Kernel del Host.
+C. Los contenedores emulan la tarjeta madre y procesadores físicos.
+D. No existe diferencia de arquitectura; ambas soluciones consumen la misma memoria RAM.
+ANSWER: B
+
+¿Qué tecnología del Kernel de Linux utiliza Docker para aislar contenedores y limitar su consumo de procesador (CPU) y memoria RAM?
+A. Namespaces (para aislamiento) y cgroups (para limitar CPU y RAM).
+B. Antivirus de Windows y Windows Defender.
+C. Tarjetas de red Wi-Fi y Bluetooth.
+D. Servidores de correo electrónico.
+ANSWER: A
+
+Al ejecutar en la terminal `docker run -d -p 8080:80 nginx`, ¿qué acción realiza exactamente el argumento `-p 8080:80`?
+A. Abre el puerto 80 del sistema anfitrión y bloquea el puerto 8080.
+B. Enruta el tráfico proveniente del puerto 8080 del Host hacia el puerto 80 interno del contenedor Nginx.
+C. Mapea y redirige el puerto 80 del Host hacia el puerto 8080 del contenedor.
+D. Asigna 8080 MB de ancho de banda de red al contenedor Nginx.
+ANSWER: B
+
+¿Cuál es la secuencia correcta de comandos en la CLI de Docker para detener y posteriormente eliminar un contenedor llamado `mi-web`?
+A. `docker rmi mi-web`
+B. `docker stop mi-web` y luego `docker rm mi-web`
+C. `docker kill mi-web` y luego `docker system prune`
+D. `docker network rm mi-web`
+ANSWER: B
+
+¿Qué sucede al ejecutar el comando `docker run hello-world` si la imagen NO se encuentra previamente descargada en tu equipo?
+A. El comando genera una excepción de sistema y aborta la ejecución.
+B. El cliente de Docker busca la imagen localmente y, al no encontrarla, la descarga automáticamente de Docker Hub (pull) y la ejecuta.
+C. Crea una imagen vacía de Python sin dependencias.
+D. Solicita reiniciar el sistema operativo para instalar una máquina virtual.
+ANSWER: B
+
+En un archivo Dockerfile, ¿cuál es la diferencia fundamental entre las instrucciones `RUN` y `CMD`?
+A. `RUN` se ejecuta al encender el contenedor; `CMD` durante la construcción de la imagen (`docker build`).
+B. `RUN` se ejecuta durante el `docker build` para instalar dependencias; `CMD` define el proceso principal que se ejecutará al iniciar el contenedor.
+C. `RUN` es para copiar archivos locales; `CMD` sirve para especificar la imagen base.
+D. No existe diferencia funcional; ambas ejecutan comandos en Linux de manera idéntica.
+ANSWER: B
+
+¿Por qué es altamente recomendable utilizar imágenes base ligeras como `alpine` o `debian-slim` en lugar de imágenes completas como `ubuntu`?
+A. Porque Alpine incluye entornos gráficos de escritorio por defecto.
+B. Para reducir drásticamente el tamaño de la imagen, acelerar la descarga y minimizar la superficie de vulnerabilidades de seguridad.
+C. Porque las imágenes completas de Ubuntu no soportan redes en Docker.
+D. Porque Alpine instala automáticamente todos los motores de bases de datos.
+ANSWER: B
+
+¿Qué función cumple la instrucción `COPY --from=builder` en una construcción de múltiples etapas (Multi-Stage Build)?
+A. Copia únicamente los archivos necesarios o el ejecutable compilado desde una etapa previa, dejando fuera compiladores y herramientas pesadas.
+B. Clona el código fuente desde GitHub a la PC local.
+C. Sube la imagen directamente a tu cuenta de Docker Hub.
+D. Elimina los contenedores que estén detenidos.
+ANSWER: A
+
+¿Qué comando de la CLI de Docker se debe utilizar para etiquetar una imagen local `mi-app:latest` con tu usuario de Docker Hub antes de publicarla?
+A. `docker rename mi-app:latest mi_usuario/mi-app:v1.0`
+B. `docker tag mi-app:latest mi_usuario/mi-app:v1.0`
+C. `docker push mi-app:latest mi_usuario/mi-app:v1.0`
+D. `docker commit mi-app:latest mi_usuario/mi-app:v1.0`
+ANSWER: B
+
+¿Cuál es el propósito principal del archivo `.dockerignore` durante el proceso de compilación `docker build`?
+A. Detener los contenedores activos que estén consumiendo mucha memoria RAM.
+B. Excluir archivos y carpetas locales (como `.git`, `node_modules`, `vendor`) para no enviarlos al contexto de construcción de Docker.
+C. Ocultar las contraseñas guardadas en los archivos de configuración.
+D. Prevenir que la imagen sea descargada por usuarios no autorizados en Docker Hub.
+ANSWER: B
+
+En Docker Compose, ¿cómo se conecta tu aplicación web (PHP, Python o Node.js) con tu contenedor de base de datos en la red interna?
+A. Utilizando el nombre del servicio configurado en el archivo `docker-compose.yml` (por ejemplo, `DB_HOST=db`).
+B. Utilizando una dirección IP pública comprada en internet.
+C. Escribiendo la contraseña del Wi-Fi de tu casa.
+D. Conectando un cable de red físico entre los contenedores.
+ANSWER: A
+
+¿Qué comando de Docker Compose permite compilar las imágenes e iniciar todos los servicios en segundo plano (detached mode)?
+A. `docker compose start --build`
+B. `docker compose up -d --build`
+C. `docker compose run -d`
+D. `docker compose init`
+ANSWER: B
+
+¿Para qué se utiliza la directiva `depends_on` en la definición de un servicio dentro de `docker-compose.yml`?
+A. Para limitar la memoria RAM máxima asignada a cada contenedor.
+B. Para definir el orden de inicio de los servicios (por ejemplo, asegurar que la base de datos encienda antes que la aplicación web).
+C. Para descargar automáticamente las últimas versiones de las imágenes desde Docker Hub.
+D. Para asignar direcciones IP estáticas a los contenedores.
+ANSWER: B
+
+¿Qué comando de Docker Compose debes utilizar para ejecutar una orden o script dentro de un contenedor que YA está encendido?
+A. `docker compose exec`
+B. `docker compose build`
+C. `docker compose down`
+D. `docker compose pull`
+ANSWER: A
+
+¿Qué acción realiza el comando `docker compose down` en la terminal?
+A. Detiene y elimina los contenedores, redes internas y volúmenes anónimos creados por la pila de Compose.
+B. Formatea el disco duro del sistema operativo Host.
+C. Cierra la sesión activa del usuario en Docker Hub.
+D. Reinicia el servicio de Docker Daemon en Windows.
+ANSWER: A
+
+Si eliminas un contenedor de base de datos y NO habías configurado un volumen persistente, ¿qué ocurre con la información guardada?
+A. Toda la información se elimina permanentemente porque los contenedores no guardan datos de forma persistente por sí solos.
+B. Se guarda automáticamente en una copia de respaldo en el Escritorio de Windows.
+C. Se envía por correo electrónico al administrador.
+D. Se guarda en la tarjeta de memoria de tu celular.
+ANSWER: A
+
+¿Cuál es la diferencia principal entre un Volumen Nombrado (`Named Volume`) y un Bind Mount en Docker?
+A. Los volúmenes nombrados son gestionados completamente por Docker dentro del directorio del daemon, mientras que los Bind Mounts vinculan una ruta específica de la PC anfitriona (ejemplo `.:/var/www/html`).
+B. Los Bind Mounts no permiten almacenar bases de datos; los volúmenes nombrados sí.
+C. Los volúmenes nombrados solo se pueden utilizar en sistemas Linux Alpine.
+D. No existe diferencia de sintaxis ni de comportamiento entre ambos.
+ANSWER: A
+
+En un archivo `docker-compose.yml`, ¿qué función cumple la regla de volumen `- /var/www/html/vendor` declarada junto con `- .:/var/www/html`?
+A. Elimina la carpeta `vendor` dentro del contenedor al arrancar.
+B. Crea un volumen anónimo que protege la carpeta `vendor` compilada en la imagen, evitando que sea sobreescrita por la carpeta local de la PC.
+C. Habilita la descarga de dependencias de Node.js en tiempo real.
+D. Aumenta la velocidad de conexión a la base de datos MySQL.
+ANSWER: B
+
+¿Cuál es el driver de red por defecto asignado por Docker al ejecutar contenedores independientes en un mismo Host?
+A. `host`
+B. `overlay`
+C. `bridge`
+D. `macvlan`
+ANSWER: C
+
+¿Para qué sirve la instrucción `HEALTHCHECK` dentro de un contenedor?
+A. Para verificar periódicamente mediante un comando interno que la aplicación o la base de datos está respondiendo correctamente.
+B. Para medir la temperatura física del procesador de la computadora.
+C. Para eliminar virus y archivos temporales del sistema operativo.
+D. Para verificar la velocidad del proveedor de internet.
+ANSWER: A

@@ -1,0 +1,167 @@
+¿Qué es Docker Compose en el ecosistema de contenedores?
+A. Un comando nativo del Kernel para crear tarjetas de red físicas.
+B. Una herramienta declarativa para definir, configurar y ejecutar aplicaciones multi-contenedor mediante archivos YAML.
+C. Un compilador de código fuente en lenguaje C++.
+D. Un registro en la nube sustituto de Docker Hub.
+ANSWER: B
+
+¿Cuál es la regla de sintaxis más importante que se debe respetar en los archivos YAML de Docker Compose?
+A. Colocar punto y coma `;` al final de cada instrucción.
+B. Encerrar todos los valores entre corchetes `{}`.
+C. Respetar estrictamente la indentación usando espacios en blanco (nunca usar la tecla Tabulador).
+D. Escribir todo el documento en letras mayúsculas.
+ANSWER: A
+
+En un archivo `docker-compose.yml`, ¿cuál es la sección de nivel superior donde se declaran los contenedores que van a ejecutarse?
+A. `volumes:`
+B. `services:`
+C. `networks:`
+D. `apps:`
+ANSWER: A
+
+Si dentro de un Compose tienes un servicio llamado `web` (Flask) y otro llamado `db` (PostgreSQL), ¿cómo debe conectarse Flask a la base de datos?
+A. Usando la dirección IP dinámica de la laptop anfitriona.
+B. Usando el hostname del nombre del servicio `db`, resuelto por el DNS interno de la red de Docker.
+C. Usando la dirección de loopback `localhost`.
+D. Abriendo un canal SSH interactivo.
+ANSWER: B
+
+¿Qué comando de Docker Compose se utiliza para construir las imágenes y levantar todos los servicios en segundo plano?
+A. `docker compose start`
+B. `docker compose up -d --build`
+C. `docker compose run --all`
+D. `docker compose deploy`
+ANSWER: B
+
+¿Qué función cumple la directiva `depends_on:` en la definición de un servicio dentro de Compose?
+A. Garantiza que la base de datos esté procesando consultas SQL antes de iniciar el contenedor web.
+B. Establece la secuencia u orden de inicio de los contenedores (arrancar la BD antes que la app web).
+C. Fusiona los archivos de código fuente de ambos contenedores.
+D. Asigna la misma memoria RAM a ambos servicios.
+ANSWER: B
+
+¿Dónde deben almacenarse las credenciales sensibles (usuarios, contraseñas de BD) en un proyecto con Docker Compose?
+A. Escritas directamente (hardcoded) en el archivo `docker-compose.yml`.
+B. En un archivo local `.env` que debe estar excluido del control de versiones en el `.gitignore`.
+C. En el archivo de documentación `README.md`.
+D. En la carpeta pública del servidor web.
+ANSWER: B
+
+¿Qué comando de Docker Compose detiene los contenedores y elimina las redes creadas por el proyecto?
+A. `docker compose stop`
+B. `docker compose down`
+C. `docker compose pause`
+D. `docker compose clean`
+ANSWER: A
+
+¿Para qué sirve mantener un archivo `.env.example` en el repositorio público del proyecto?
+A. Para cifrar las variables de entorno en producción.
+B. Para servir como plantilla documentada de las variables que el proyecto requiere, sin revelar contraseñas reales.
+C. Para descargar las imágenes de Docker Hub.
+D. Para instalar Docker Compose en Linux.
+ANSWER: A
+
+¿Qué comando de Compose permite monitorear los logs consolidando la salida de todos los servicios en tiempo real?
+A. `docker compose logs -f`
+B. `docker compose ps --logs`
+C. `docker compose inspect logs`
+D. `docker compose status -v`
+ANSWER: B
+
+¿Qué diferencia existe entre ejecutar `docker compose down` y `docker compose down -v`?
+A. No hay ninguna diferencia.
+B. `docker compose down -v` además elimina los volúmenes nombrados del proyecto, borrando la información persistente de las bases de datos.
+C. `docker compose down -v` solo detiene la app web pero deja la base de datos activa.
+D. `docker compose down -v` activa el modo de diagnóstico detallado.
+ANSWER: B
+
+¿Por qué la aplicación Flask dentro de su contenedor NO puede conectarse a PostgreSQL usando `host="localhost"`?
+A. Porque PostgreSQL rechaza todas las conexiones locales.
+B. Porque dentro del contenedor de Flask, `localhost` apunta a su propia interfaz de red loopback interna y no al contenedor de PostgreSQL.
+C. Porque Docker desactiva el protocolo TCP/IP.
+D. Porque `localhost` es una palabra reservada exclusiva de Windows.
+ANSWER: B
+
+¿Qué sucede con los datos escritos dentro del sistema de archivos de un contenedor si este se destruye y no tiene volúmenes configurados?
+A. Se guardan automáticamente en la carpeta Documentos del usuario.
+B. Se pierden de forma permanente debido a la naturaleza efímera y volátil del almacenamiento del contenedor.
+C. Docker los almacena en un servidor de soporte en la nube.
+D. Se respaldan en un archivo `.zip` oculto.
+ANSWER: B
+
+¿Cuál es la diferencia arquitectónica entre un Volumen Nombrado (Named Volume) y un Bind Mount?
+A. Los volúmenes nombrados son gestionados por Docker en una ruta interna reservada del Host; los bind mounts enlazan una ruta o carpeta específica definida por el usuario.
+B. Los bind mounts borran los datos al apagar el equipo.
+C. Los volúmenes nombrados solo funcionan en sistemas Windows.
+D. Los bind mounts consumen el doble de memoria RAM.
+ANSWER: A
+
+¿En qué ruta predeterminada del sistema de archivos de Linux gestiona Docker los Volúmenes Nombrados?
+A. `/var/lib/docker/volumes/`
+B. `/etc/docker/storage/`
+C. `/tmp/docker/volumes/`
+D. `/home/user/.docker/data/`
+ANSWER: A
+
+¿Qué comando permite inspeccionar la lista de contenedores conectados a una red virtual de Docker y conocer sus direcciones IP internas?
+A. `docker network ls`
+B. `docker network inspect <nombre_red>`
+C. `docker network status`
+D. `docker ip show`
+ANSWER: B
+
+¿Por qué es una recomendación clave de seguridad (Hardening) NO publicar el puerto de PostgreSQL (`5432`) en el archivo Compose de producción?
+A. Porque PostgreSQL funciona más rápido sin puertos.
+B. Porque evita exponer el motor de base de datos a ataques o escaneos externos desde internet, permitiendo tráfico únicamente desde la red privada de Docker.
+C. Porque libera espacio en el disco duro.
+D. Porque inhabilita la necesidad de contraseñas.
+ANSWER: B
+
+¿Cómo se realiza un respaldo (dump SQL) de una base de datos PostgreSQL en Compose sin necesidad de exponer su puerto al exterior?
+A. Deteniendo el contenedor y copiando la carpeta `/var/lib/docker`.
+B. Ejecutando: `docker compose exec -T db pg_dump -U appuser appdb > backups/appdb.sql`.
+C. Abriendo una sesión en el navegador web.
+D. Descargando los archivos con `docker cp` mientras el contenedor está apagado.
+ANSWER: B
+
+¿Por qué es necesario utilizar el flag `-T` al ejecutar `docker compose exec -T db pg_dump ...` dentro de un script de automatización?
+A. Para ejecutar el respaldo en modo de prueba sin escribir datos.
+B. Para desactivar la asignación de un pseudo-TTY, evitando que caracteres de control de consola corrompan la redirección del archivo SQL.
+C. Para limitar el uso de CPU durante el respaldo.
+D. Para cifrar la salida con clave pública.
+ANSWER: B
+
+¿Qué comando se debe utilizar para restaurar un respaldo SQL contenido en `backups/appdb.sql` hacia la base de datos PostgreSQL activa en Compose?
+A. `docker compose exec -T db psql -U appuser appdb < backups/appdb.sql`
+B. `docker restore db < backups/appdb.sql`
+C. `docker import backups/appdb.sql db`
+D. `docker compose load -i backups/appdb.sql`
+ANSWER: A
+
+¿Qué diferencia existe entre un contenedor en estado `running` y un contenedor en estado `healthy`?
+A. `running` significa que el proceso principal arrancó; `healthy` indica que el Healthcheck confirmó que el servicio interno (ej. Postgres) ya está listo para responder tráfico.
+B. `healthy` es solo para contenedores Nginx.
+C. `running` significa que el contenedor consume más del 80% de CPU.
+D. No hay diferencia, son sinónimos.
+ANSWER: A
+
+En la configuración de un Healthcheck para PostgreSQL, ¿qué herramienta de consola se utiliza habitualmente en la instrucción `test:`?
+A. `curl -f http://localhost`
+B. `pg_isready -U usuario -d dbnombre`
+C. `ping 127.0.0.1`
+D. `systemctl status postgresql`
+ANSWER: B
+
+Si un desarrollo requiere que los cambios de código fuente en la laptop se reflejen inmediatamente dentro del contenedor sin hacer `docker build`, ¿qué tipo de montaje se debe usar?
+A. Volumen Nombrado
+B. Bind Mount (ej. `./app:/app`)
+C. tmpfs mount
+D. Ninguno, se debe recompilar siempre.
+ANSWER: B
+
+¿Qué comando de Docker elimina todos los volúmenes nombrados que NO estén asociados a ningún contenedor activo?
+A. `docker volume rm --all`
+B. `docker volume prune`
+C. `docker system clean`
+D. `docker volume reset`
+ANSWER: B

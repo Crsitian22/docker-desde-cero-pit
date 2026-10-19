@@ -1,0 +1,83 @@
+¿Qué sucede si dos contenedores intentan mapear el mismo puerto del Host (ejemplo: `-p 80:80`) de forma simultánea?
+A. Docker crea un balanceador de carga automático.
+B. El segundo contenedor fallará con error `port is already allocated` al intentar iniciar.
+C. El primer contenedor se detiene inmediatamente.
+D. Ambos contenedores comparten la misma dirección IP.
+ANSWER: B
+
+¿Cuál es el mecanismo recomendado para pasar secretos en tiempo de compilación sin dejar rastro en las capas de la imagen final?
+A. Usar la instrucción `ENV MY_SECRET=clave`.
+B. Utilizar `BuildKit` con la sintaxis `RUN --mount=type=secret,id=mysecret...`.
+C. Escribir el secreto en el `Dockerfile`.
+D. Subir el secreto a Docker Hub.
+ANSWER: B
+
+Si un contenedor Nginx muestra `403 Forbidden` al acceder a la raíz del sitio web, ¿cuál es la causa más probable en el volumen montado?
+A. Nginx no está instalado.
+B. Los permisos de lectura de la carpeta o archivos montados no permiten el acceso al usuario `nginx` dentro del contenedor.
+C. El puerto 80 está cerrado en el router.
+D. Falta la contraseña de PostgreSQL.
+ANSWER: B
+
+¿Qué comando se utiliza para pausar todos los procesos dentro de un contenedor sin destruirlo ni liberar su memoria RAM?
+A. `docker stop`
+B. `docker pause`
+C. `docker freeze`
+D. `docker sleep`
+ANSWER: B
+
+En un entorno de integración continua (CI/CD), ¿qué ventaja ofrece el uso del flag `--no-cache` al ejecutar `docker build`?
+A. Acelera la compilación al máximo.
+B. Fuerz el re-descargado y re-compilación de todas las capas, garantizando que se utilicen los parches de seguridad más recientes.
+C. Borra las imágenes del servidor de producción.
+D. Desactiva las pruebas unitarias.
+ANSWER: B
+
+¿Por qué la directiva `restart: always` en Docker Compose es crucial para entornos de producción?
+A. Porque reinicia la computadora anfitriona cada noche.
+B. Porque asegura que si un contenedor falla o el servidor se reinicia, Docker volverá a levantar automáticamente el servicio.
+C. Porque actualiza el código fuente desde GitHub automáticamente.
+D. Porque borra la memoria caché cada hora.
+ANSWER: B
+
+¿Qué diferencia existe entre `docker compose exec` y `docker compose run`?
+A. `exec` ejecuta un comando dentro de un contenedor en ejecución existente; `run` crea un nuevo contenedor ad-hoc a partir de la definición del servicio.
+B. `run` es solo para Windows y `exec` para Linux.
+C. `exec` borra los datos del contenedor.
+D. Son exactamente lo mismo.
+ANSWER: A
+
+¿Qué realiza la opción `working_dir:` en un servicio dentro de un archivo `compose.yml`?
+A. Sobrescribe la instrucción `WORKDIR` definida previamente en el `Dockerfile`.
+B. Cambia la ruta donde se guardan los volúmenes del Host.
+C. Define la carpeta de descargas del usuario.
+D. Formatea el disco duro del servidor.
+ANSWER: A
+
+¿Qué comando de Docker permite copiar archivos desde la computadora anfitriona hacia el interior de un contenedor activo (o viceversa)?
+A. `docker mv`
+B. `docker cp`
+C. `docker scp`
+D. `docker transfer`
+ANSWER: B
+
+¿Cuál es el propósito del archivo `docker-bake.hcl` o de `docker buildx` en proyectos avanzados?
+A. Generar código HTML automático.
+B. Permitir la construcción paralela y multi-arquitectura (ej. `linux/amd64` y `linux/arm64`) de imágenes.
+C. Reemplazar a PostgreSQL como base de datos.
+D. Crear respaldos automáticos en Google Drive.
+ANSWER: B
+
+Si necesitas verificar los eventos del motor Docker en tiempo real (creación, arranque, detención de contenedores), ¿qué comando ejecutas?
+A. `docker events`
+B. `docker monitor`
+C. `docker stream`
+D. `docker watch`
+ANSWER: A
+
+¿Qué sucede si eliminas un archivo `.env` en un proyecto de Docker Compose activo?
+A. Los contenedores en ejecución se detendrán de inmediato.
+B. Los contenedores activos seguirán funcionando con las variables que ya leyeron en su inicio, pero al reiniciar o hacer `up` fallará la inyección de variables.
+C. Se eliminarán los volúmenes de datos.
+D. La imagen de Docker se borrará de Docker Hub.
+ANSWER: B

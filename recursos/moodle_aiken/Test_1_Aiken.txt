@@ -1,0 +1,167 @@
+¿Cuál es la diferencia de arquitectura fundamental entre una Máquina Virtual (VM) y un Contenedor Docker?
+A. Las VMs son más ligeras y veloces al arrancar que los contenedores.
+B. Las VMs emulan un hardware virtual y requieren un Sistema Operativo Invitado completo (Guest OS), mientras que los contenedores ejecutan procesos aislados que comparten el Kernel del Host.
+C. Los contenedores virtualizan la tarjeta madre y procesadores físicos.
+D. No existe diferencia de arquitectura; ambas soluciones consumen la misma memoria RAM.
+ANSWER: B
+
+Si ejecutas en la terminal `docker run -d -p 8080:80 nginx`, ¿qué acción realiza exactamente el argumento `-p 8080:80`?
+A. Abre el puerto 80 del sistema anfitrión y bloquea el puerto 8080.
+B. Enruta el tráfico proveniente del puerto 80 del Host hacia el puerto 8080 interno del contenedor.
+C. Mapea y redirige las conexiones entrantes en el puerto 8080 del Host hacia el puerto 80 interno del contenedor Nginx.
+D. Asigna 8080 MB de ancho de banda de red al puerto 80.
+ANSWER: A
+
+¿Qué comando de la CLI de Docker se debe utilizar para verificar la lista de contenedores que se están ejecutando en este momento?
+A. `docker container status`
+B. `docker image ls`
+C. `docker ps` (o `docker container ls`)
+D. `docker inspect --all`
+ANSWER: B
+
+Si deseas detener y posteriormente eliminar un contenedor nombrado `web-demo`, ¿cuál es la secuencia correcta de comandos?
+A. `docker rmi web-demo`
+B. `docker stop web-demo` y luego `docker rm web-demo`
+C. `docker kill web-demo` y luego `docker system prune web-demo`
+D. `docker network rm web-demo`
+ANSWER: B
+
+¿Qué sucede cuando ejecutas `docker run hello-world` por primera vez si la imagen no se encuentra en tu equipo?
+A. El comando genera una excepción y aborta la ejecución.
+B. El cliente de Docker busca la imagen localmente y, al no encontrarla, la descarga automáticamente de Docker Hub (pull) y la ejecuta.
+C. Crea una imagen vacía de Python sin dependencias.
+D. Solicita permisos de administrador para instalar una máquina virtual.
+ANSWER: B
+
+¿Cuál es la función principal de los Control Groups (cgroups) en el motor de Docker?
+A. Asignar direcciones IP fijas a cada contenedor.
+B. Limitar, auditar y medir el consumo de recursos físicos (RAM, CPU e I/O de disco) de los contenedores.
+C. Cifrar el sistema de archivos del sistema operativo.
+D. Crear la interfaz gráfica de usuario en Windows.
+ANSWER: B
+
+¿Qué mecanismo del Kernel de Linux utiliza Docker para aislar la pila de red y las interfaces entre contenedores?
+A. Namespaces PID
+B. Namespaces MNT
+C. Namespaces NET
+D. Namespaces IPC
+ANSWER: A
+
+¿Cuál es el comando correcto para eliminar una imagen local etiquetada como `python:3.12-slim`?
+A. `docker container rm python:3.12-slim`
+B. `docker image rm python:3.12-slim` (o `docker rmi python:3.12-slim`)
+C. `docker system clean python:3.12-slim`
+D. `docker network disconnect python:3.12-slim`
+ANSWER: B
+
+¿Qué beneficio aporta ejecutar un contenedor con el flag `-d` (detached)?
+A. Desconecta el contenedor de la red de internet.
+B. Ejecuta el contenedor en segundo plano, liberando de inmediato la terminal de comandos.
+C. Desactiva la lectura de archivos de configuración.
+D. Inicia el contenedor en modo interactivo con una consola Bash.
+ANSWER: A
+
+¿Bajo qué modelo de arquitectura opera la plataforma Docker?
+A. Monolítica local sin sockets.
+B. Cliente-Servidor (CLI conectada mediante Socket UNIX o API REST con el Docker Daemon).
+C. Red P2P sin servidores centrales.
+D. Servidor SSH sin autenticación.
+ANSWER: B
+
+En un `Dockerfile`, ¿qué instrucción define el proceso o comando por defecto que arrancará el contenedor?
+A. `RUN`
+B. `COPY`
+C. `CMD`
+D. `FROM`
+ANSWER: A
+
+¿Por qué motivo Docker Desktop en Windows requiere obligatoriamente el entorno WSL 2?
+A. Para renderizar la interfaz gráfica de las aplicaciones web.
+B. Porque WSL 2 provee un Kernel de Linux real sobre el cual operan los Namespaces y cgroups que necesita Docker.
+C. Para permitir la instalación de paquetes `.deb`.
+D. Para actuar como antivirus del sistema.
+ANSWER: A
+
+¿Cuál es la función principal de la instrucción `WORKDIR /app` en un Dockerfile?
+A. Descargar el compilador de Python en `/app`.
+B. Establecer el directorio de trabajo interno donde se ejecutarán las instrucciones posteriores (`COPY`, `RUN`, `CMD`).
+C. Asignar permisos de administrador al directorio del Host.
+D. Limpiar la memoria caché del disco duro.
+ANSWER: B
+
+¿Cuál es la diferencia técnica entre las instrucciones `RUN` y `CMD` en un Dockerfile?
+A. `RUN` se ejecuta en tiempo de compilación de la imagen (`docker build`); `CMD` se ejecuta al iniciar el contenedor (`docker run`).
+B. `RUN` sirve para descargar imágenes de Docker Hub y `CMD` para borrarlas.
+C. `RUN` abre puertos de red y `CMD` configura variables de entorno.
+D. Son instrucciones idénticas y se pueden intercambiar libremente.
+ANSWER: A
+
+¿Por qué la variante de imagen base `python:3.12-slim` es preferible frente a `python:latest` para entornos de producción?
+A. Porque `latest` elimina todas las librerías de seguridad.
+B. Porque `slim` fija una versión concreta reducida que garantiza compilaciones reproducibles, evitando cambios inesperados que genera `latest`.
+C. Porque `slim` solo ocupa 1 MB de disco.
+D. Porque `latest` no permite instalar paquetes con `pip`.
+ANSWER: B
+
+¿Qué utilidad ofrece el archivo `.dockerignore` durante el proceso de `docker build`?
+A. Cifra las contraseñas guardadas en el contenedor.
+B. Evita enviar archivos innecesarios o sensibles (`.git`, `node_modules`, `.env`) al contexto de construcción del motor Docker.
+C. Elimina las imágenes antiguas de la computadora.
+D. Evita que el contenedor tenga acceso a la red de internet.
+ANSWER: B
+
+¿Cómo aprovecha el motor de Docker el sistema de capas y la caché durante la construcción de una imagen?
+A. Borra todas las capas previas y las descarga de nuevo en cada build.
+B. Reutiliza las capas inmutables que no han cambiado, invalidando el caché únicamente a partir de la primera instrucción que sufrió modificaciones.
+C. Cifra las capas en la memoria RAM para que no se puedan modificar.
+D. Ejecuta el compilador en la nube de Docker Hub.
+ANSWER: B
+
+¿Por qué es considerado una MALA PRÁCTICA colocar `COPY . .` ANTES de `RUN pip install -r requirements.txt`?
+A. Porque marca un error de sintaxis en el Dockerfile.
+B. Porque cualquier cambio en el código fuente invalidará la caché, obligando a reinstalar todas las librerías en cada build.
+C. Porque `COPY` borra el archivo `requirements.txt`.
+D. Porque `pip` no funciona si los archivos ya están copiados.
+ANSWER: B
+
+¿Cuál es la diferencia práctica entre las instrucciones `COPY` y `ADD`?
+A. `COPY` es la instrucción recomendada para copiar archivos locales; `ADD` además puede descomprimir tarballs `.tar.gz` y descargar URLs.
+B. `ADD` copia archivos locales y `COPY` descarga de internet.
+C. `COPY` solo funciona con archivos de texto y `ADD` con imágenes `.png`.
+D. Ambas son obsoletas y fueron reemplazadas por `MOVE`.
+ANSWER: A
+
+¿Qué diferencia existe entre la instrucción `EXPOSE 5000` y la opción `-p 5000:5000` al ejecutar `docker run`?
+A. `EXPOSE` publica el puerto en internet y `-p` lo documenta.
+B. `EXPOSE` es solo metadato documental en la imagen; `-p` es el comando que realmente abre y mapea el puerto en la máquina anfitriona.
+C. Ambas realizan la misma acción de apertura de red.
+D. `EXPOSE` activa el cifrado SSL.
+ANSWER: B
+
+¿Qué comando se debe ejecutar para publicar una imagen etiquetada localmente hacia Docker Hub?
+A. `docker push miusuario/mi-app:v1.0.0`
+B. `docker upload miusuario/mi-app:v1.0.0`
+C. `docker publish miusuario/mi-app:v1.0.0`
+D. `docker send miusuario/mi-app:v1.0.0`
+ANSWER: A
+
+¿Cuál es el comando correcto para renombrar o añadir una nueva etiqueta (tag) a una imagen existente?
+A. `docker rename mi-app:v1 mi-app:v2`
+B. `docker tag mi-app:v1 mi-app:v2`
+C. `docker update mi-app:v1 --tag v2`
+D. `docker label mi-app:v1 v2`
+ANSWER: B
+
+¿Qué diferencia existe entre las imágenes base tipo `alpine` y `slim`?
+A. `alpine` usa la librería C `musl` super ligera; `slim` usa una distribución Debian minimizada con la librería C estándar (`glibc`).
+B. `alpine` es exclusiva para Mac y `slim` para Windows.
+C. `slim` no permite ejecutar scripts Python.
+D. `alpine` ocupa 5 GB de espacio en disco.
+ANSWER: A
+
+¿Qué comando permite inspeccionar el historial detallado de capas y comandos con los que se construyó una imagen?
+A. `docker history <nombre_imagen>`
+B. `docker layers <nombre_imagen>`
+C. `docker build log <nombre_imagen>`
+D. `docker inspect --layers <nombre_imagen>`
+ANSWER: A

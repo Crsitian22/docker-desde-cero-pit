@@ -1,0 +1,167 @@
+¿Por qué se coloca un servidor web Nginx como Reverse Proxy al frente de una aplicación web Flask en producción?
+A. Porque Flask no soporta código HTML.
+B. Porque Nginx centraliza la seguridad, maneja TLS/SSL, sirve archivos estáticos y protege al servidor WSGI de Flask expuesto internamente.
+C. Porque Nginx compila la base de datos PostgreSQL.
+D. Porque reduce el consumo de memoria RAM a cero.
+ANSWER: B
+
+En la configuración de Nginx (`default.conf`), ¿qué función cumple la directiva `proxy_pass http://web:5000;`?
+A. Descarga el código fuente de Flask desde GitHub.
+B. Redirige de forma transparente las solicitudes HTTP entrantes hacia el puerto 5000 del servicio nombrado `web` en la red interna de Docker.
+C. Bloquea el acceso a todas las direcciones IP externas.
+D. Abre el puerto 5000 en la computadora del usuario final.
+ANSWER: B
+
+¿Cuál es el beneficio de seguridad de configurar el servicio `web` con la directiva `expose: - "5000"` en lugar de `ports: - "5000:5000"` en Compose?
+A. Aumenta la velocidad de procesamiento de la CPU.
+B. Garantiza que Flask solo sea accesible dentro de la red privada por Nginx, impidiendo que usuarios de internet accedan directamente al puerto 5000.
+C. Permite ejecutar la app sin instalar Python.
+D. Cifra el archivo `app.py`.
+ANSWER: B
+
+En un `Dockerfile` Multi-stage, ¿qué realiza la línea `COPY --from=builder /root/.local /root/.local`?
+A. Copia archivos desde internet a la computadora del desarrollador.
+B. Copia únicamente los paquetes y librerías instaladas en la etapa previa llamada `builder` hacia la etapa limpia de `runtime`.
+C. Borra el historial de comandos de Linux.
+D. Cifra la carpeta de usuario de la imagen.
+ANSWER: B
+
+¿Qué sucede si un contenedor sin límites de recursos sufre una fuga de memoria (memory leak) en un servidor de producción?
+A. Docker escala automáticamente el contenedor a otro servidor.
+B. Consumirá la memoria RAM del Host hasta que el Kernel de Linux active el **OOM Killer**, liquidando el proceso del contenedor con un Exit Code 137.
+C. El procesador aumentará su velocidad al doble.
+D. Se formateará el disco duro del servidor.
+ANSWER: B
+
+¿Cómo se limitan los recursos de memoria RAM y procesador para un servicio en un archivo Compose?
+A. En la sección `deploy.resources.limits` (ej. `memory: 256M` y `cpus: '0.5'`).
+B. Escribiendo comandos `chmod` en el Dockerfile.
+C. Configurando el archivo `.env`.
+D. Usando un Bind Mount.
+ANSWER: B
+
+¿Qué utilidad ofrece configurar la rotación de logs en Compose con el driver `json-file` y las opciones `max-size: "10m"` y `max-file: "3"`?
+A. Aumenta la velocidad del servidor Nginx.
+B. Previene que los archivos de bitácora crezcan indefinidamente y llenen el espacio total del disco duro del servidor.
+C. Borra los logs cada 10 minutos.
+D. Envía los logs por correo electrónico.
+ANSWER: B
+
+¿Qué es `ttl.sh` en el ecosistema de contenedores?
+A. Un comando de Linux para cambiar la hora del sistema.
+B. Un registro de imágenes Docker público y efímero que no requiere login y elimina automáticamente las imágenes tras un tiempo definido (ej. 24h).
+C. Un plugin para compilar código Python.
+D. Un firewall de red para Compose.
+ANSWER: A
+
+¿Cuál es el nombre del registro oficial de contenedores integrado en la plataforma de GitHub?
+A. `docker.io`
+B. `ghcr.io` (GitHub Container Registry)
+C. `registry.github.com`
+D. `hub.github.io`
+ANSWER: B
+
+¿Cuál es la forma segura de autenticarse en la CLI de Docker contra `ghcr.io` o Docker Hub en pipelines automatizados?
+A. Escribiendo la contraseña personal en texto plano en la consola.
+B. Usando un Personal Access Token (PAT) enviado mediante la entrada estándar con `--password-stdin`.
+C. Desactivando la autenticación de usuario.
+D. Subiendo la clave privada SSH al repositorio público.
+ANSWER: B
+
+¿Qué comando de la consola de Docker permite monitorear el consumo de CPU, RAM y red de todos los contenedores activos en tiempo real?
+A. `docker stats`
+B. `docker top`
+C. `docker inspect`
+D. `docker system df`
+ANSWER: B
+
+¿Por qué es importante agregar la instrucción `USER appuser` al final de un `Dockerfile` de producción?
+A. Para acelerar el tiempo de booteo de la app.
+B. Para que la aplicación se ejecute con un usuario sin privilegios, evitando que un atacante obtenga acceso root al sistema host en caso de una vulnerabilidad.
+C. Para permitir el acceso SSH al contenedor.
+D. Para habilitar la instalación de paquetes en caliente.
+ANSWER: B
+
+¿Qué ventaja técnica ofrece la estrategia de separar los archivos Compose en `compose.yml` (base) y `compose.prod.yml` (override de producción)?
+A. Permite ejecutar diferentes versiones del motor de Docker en la misma computadora.
+B. Reutiliza la arquitectura base común y aplica únicamente las reglas de producción (imágenes estáticas, restart policies, Nginx) sin duplicar código YAML.
+C. Cifra el código fuente en formato binario.
+D. Elimina la necesidad de usar imágenes base.
+ANSWER: B
+
+Al compilar imágenes repetidamente durante el desarrollo, ¿qué residuo consume espacio en disco silenciosamente?
+A. Volúmenes de bases de datos duplicados.
+B. Capas e imágenes antiguas huérfanas sin etiqueta conocidas como "dangling images" (`<none>:<none>`).
+C. Archivos de registro `.log` en el sistema operativo.
+D. Caché del navegador web.
+ANSWER: B
+
+¿Qué comando de la CLI de Docker te permite auditar el consumo total de disco detallado por imágenes, contenedores, volúmenes y caché?
+A. `docker stats`
+B. `docker system df`
+C. `docker volume ls`
+D. `docker inspect --size`
+ANSWER: B
+
+Si deseas eliminar contenedores detenidos, redes sin uso e imágenes huérfanas sin tag de forma segura, ¿qué comando ejecutas?
+A. `docker system clean`
+B. `docker system prune`
+C. `docker container rm --all`
+D. `docker image rm --force`
+ANSWER: B
+
+¿Qué riesgo crítico se debe considerar antes de ejecutar `docker system prune -a --volumes` en un servidor de producción?
+A. Que borrará los archivos de código del sistema host.
+B. Que eliminará TODOS los volúmenes nombrados no asociados a contenedores activos en ese instante, pudiendo causar pérdida total de datos de BDs inactivas.
+C. Que detendrá el servicio de internet.
+D. Que desinstalará la consola de Docker.
+ANSWER: B
+
+¿Por qué se utilizan scripts automatizados en Bash como `desplegar.sh` para ejecutar las actualizaciones en servidores?
+A. Porque aumentan la velocidad de renderizado de la aplicación web.
+B. Porque estandarizan el flujo sin errores manuales: actualización de código, apagado, reconstrucción y limpieza segura en una sola secuencia.
+C. Porque protegen el servidor contra virus.
+D. Porque evitan la necesidad de usar contraseñas en Git.
+ANSWER: B
+
+Al crear un script Bash de despliegue en Windows para ejecutar en un servidor Linux, ¿por qué motivo suele fallar con el error `\r: command not found`?
+A. Por incompatibilidad de versiones de Python.
+B. Porque los editores de Windows guardan los saltos de línea con formato `CRLF` (`\r\n`), mientras que Linux requiere formato `LF` (`\n`).
+C. Porque Linux no soporta scripts Bash.
+D. Porque las variables de entorno están cifradas.
+ANSWER: B
+
+¿Qué utilidad de consola se debe utilizar para convertir los saltos de línea de un script de formato Windows (`CRLF`) a formato Linux (`LF`)?
+A. `dos2unix`
+B. `unix2dos`
+C. `chmod +x`
+D. `tar -xzf`
+ANSWER: A
+
+¿Qué realiza la instrucción de seguridad `set -euo pipefail` al inicio de un script Bash de despliegue?
+A. Activa el modo interactivo con el usuario.
+B. Detiene la ejecución del script inmediatamente si un comando falla (`-e`), si se usa una variable no definida (`-u`) o si falla una tubería (`-o pipefail`).
+C. Ejecuta los comandos en paralelo en múltiples procesadores.
+D. Oculta la salida de los comandos en la pantalla.
+ANSWER: B
+
+Si deseas obtener la dirección IP interna asignada a un contenedor desde un script Bash, ¿qué comando ejecutas?
+A. `docker logs app-web`
+B. `docker inspect --format '{{.NetworkSettings.IPAddress}}' app-web`
+C. `docker stats app-web --no-stream`
+D. `docker network show app-web`
+ANSWER: B
+
+¿Cómo puedes auditar las bitácoras del servicio `web` generadas exclusivamente en los últimos 15 minutos?
+A. `docker compose logs --tail=15 web`
+B. `docker compose logs --since=15m web`
+C. `docker stats web --time=15`
+D. `docker inspect web --logs=15`
+ANSWER: B
+
+¿Cuál es la prueba de fuego que debe cumplir el Proyecto Final de arquitectura en Docker?
+A. Que la aplicación ocupe menos de 1 MB.
+B. Que la infraestructura completa (Flask + PostgreSQL + Nginx + Volúmenes) pueda ser destruida y reconstruida desde cero de forma 100% reproducible mediante un solo script.
+C. Que corra únicamente en computadoras de la marca Apple.
+D. Que no use archivos `.env`.
+ANSWER: B

@@ -1,0 +1,139 @@
+Un desarrollador reporta que su aplicación Flask falla al conectarse a PostgreSQL con el mensaje `Connection refused`. Al revisar `docker compose ps`, notas que ambos contenedores están `running`. ¿Cuál es el diagnóstico correcto?
+A. El puerto 5432 no está abierto en el router del hogar.
+B. El contenedor de PostgreSQL está activo pero su servicio interno todavía está inicializando la base de datos y no está listo para recibir conexiones. Se requiere un `healthcheck` con `depends_on: condition: service_healthy`.
+C. La laptop del desarrollador no tiene conexión a internet.
+D. Flask no es compatible con PostgreSQL en Docker.
+ANSWER: B
+
+¿Por qué la directiva `USER 10001` es preferible frente a `USER root` en contenedores expuestos a la red?
+A. Porque el usuario 10001 tiene mayor velocidad de cálculo.
+B. Porque restringe los privilegios de ejecución, de modo que si la app sufre un exploit de ejecución remota de código, el atacante no obtendrá privilegios root sobre el host.
+C. Porque permite instalar software sin contraseña.
+D. Porque es el estándar exclusivo de Windows.
+ANSWER: B
+
+¿Cuál es la función exacta de un Reverse Proxy Nginx en una arquitectura microservicios con Docker?
+A. Servir como motor de base de datos relacional.
+B. Actuar como punto único de entrada (API Gateway / Ingress), gestionando certificados SSL/TLS, rutas URL, compresión gzip y balanceo hacia las aplicaciones internas.
+C. Compilar el código Python a binarios ejecutables.
+D. Generar respaldos diarios de la base de datos.
+ANSWER: B
+
+Si ejecutas `docker run --rm -v /var/run/docker.sock:/var/run/docker.sock alpine`, ¿qué capacidades le estás otorgando al contenedor?
+A. Solo acceso a la hora del sistema.
+B. Control total sobre el Docker Daemon del host, permitiéndole crear, detener y eliminar otros contenedores en la máquina anfitriona.
+C. Permisos de lectura en la carpeta de imágenes del usuario.
+D. Ninguna, es un comando inválido.
+ANSWER: B
+
+En un Dockerfile Multi-Stage, ¿cuál es el objetivo de utilizar la imagen base `distroless` o `alpine` en la última etapa?
+A. Reducir la superficie de ataque eliminando herramientas superfluas (Shell Bash, Curl, Compiladores) y minimizar el peso de la imagen final.
+B. Aumentar el tamaño de la imagen para que sea más segura.
+C. Permitir el acceso por SSH sin contraseña.
+D. Instalar automáticamente la interfaz gráfica.
+ANSWER: A
+
+¿Qué sucede con un volumen nombrado si ejecutas `docker compose down` sin banderas adicionales?
+A. El volumen se elimina de forma permanente.
+B. El volumen persiste en el disco del host con toda su información intacta para el siguiente inicio.
+C. El volumen se comprime en un archivo `.zip`.
+D. El volumen se sube automáticamente a GitHub.
+ANSWER: B
+
+¿Qué herramienta se utiliza para analizar imágenes de Docker en busca de vulnerabilidades conocidas (CVEs) en paquetes del sistema operativo?
+A. `docker scout` (o `trivy` / `grype`)
+B. `docker clean`
+C. `docker format`
+D. `docker repair`
+ANSWER: A
+
+¿Cuál es el beneficio de definir redes personalizadas (`networks:`) en lugar de usar la red `bridge` por defecto en Docker Compose?
+A. La red por defecto es pagada.
+B. Las redes personalizadas habilitan el servidor DNS automático entre nombres de servicio y proporcionan aislamiento entre distintos stacks de aplicaciones.
+C. Las redes personalizadas duplican la velocidad del procesador.
+D. La red `bridge` por defecto no soporta tráfico HTTP.
+ANSWER: B
+
+¿Qué comando permite exportar un contenedor en ejecución a un archivo de archivo comprimido `.tar` para trasladarlo a otro equipo sin usar registry?
+A. `docker export` (o `docker save` para imágenes)
+B. `docker zip`
+C. `docker move`
+D. `docker send`
+ANSWER: A
+
+¿Cómo se define una variable de entorno con un valor por defecto en Compose si la variable no existe en el archivo `.env`?
+A. `${MI_VARIABLE:-valor_por_defecto}`
+B. `${MI_VARIABLE == valor_por_defecto}`
+C. `DEFAULT MI_VARIABLE = valor_por_defecto`
+D. `[MI_VARIABLE OR valor_por_defecto]`
+ANSWER: A
+
+¿Qué comando te permite ver el uso de recursos en tiempo real (CPU, memoria RAM, I/O de disco) de todos los contenedores de un proyecto Compose?
+A. `docker compose top`
+B. `docker stats`
+C. `docker compose inspect`
+D. `docker system status`
+ANSWER: B
+
+Si deseas ejecutar un comando puntual dentro de un contenedor en ejecución sin abrir una consola interactiva (por ejemplo `python manage.py migrate`), ¿qué comando usas?
+A. `docker compose exec web python manage.py migrate`
+B. `docker compose start web python manage.py migrate`
+C. `docker compose build web python manage.py migrate`
+D. `docker compose create web python manage.py migrate`
+ANSWER: A
+
+¿Cuál es el propósito del encabezado `# syntax=docker/dockerfile:1` al inicio de un `Dockerfile`?
+A. Es un comentario ignorado por el compilador.
+B. Indica a BuildKit qué versión de la sintaxis del Dockerfile debe utilizar para habilitar características avanzadas (como montajes de caché o secretos).
+C. Obliga a instalar la versión 1 de Linux.
+D. Cambia el idioma de los logs a español.
+ANSWER: B
+
+¿Qué bandera de `docker run` limita la memoria RAM máxima que puede utilizar un contenedor a 512 Megabytes?
+A. `-m 512m` (o `--memory=512m`)
+B. `--ram 512`
+C. `-c 512`
+D. `--limit-ram 512`
+ANSWER: A
+
+¿Qué realiza el flag `--init` al ejecutar un contenedor con `docker run`?
+A. Inicializa la base de datos PostgreSQL.
+B. Inserta un proceso Tiny INIT (como PID 1) para cosechar procesos zombi y reenviar señales del sistema (`SIGTERM`, `SIGINT`) correctamente.
+C. Formatea la memoria RAM.
+D. Crea una cuenta de usuario en Docker Hub.
+ANSWER: B
+
+¿Por qué es recomendable utilizar archivos de configuración `.dockerignore` tanto en entornos de desarrollo como de producción?
+A. Porque reduce el tiempo de transferencia del contexto de compilación y evita incluir claves privadas o carpetas pesadas como `node_modules` o `.git`.
+B. Porque cifran los archivos del servidor web.
+C. Porque aumentan la resolución de pantalla.
+D. Porque eliminan los errores de código en Python.
+ANSWER: A
+
+¿Qué ocurre si un contenedor tiene configurada la política `restart: unless-stopped` y el servidor anfitrión se reinicia?
+A. El contenedor no volverá a arrancar nunca.
+B. El contenedor se iniciará automáticamente al reiniciar el Host, a menos que haya sido detenido manualmente por el administrador antes del apagado.
+C. Se borrarán todos los volúmenes del sistema.
+D. Se enviará una alerta por correo electrónico.
+ANSWER: B
+
+¿Qué diferencia existe entre un `ENTRYPOINT` en forma Executive `["executable", "param1"]` y en forma Shell `executable param1`?
+A. La forma Executive no ejecuta un shell intermedio (`/bin/sh -c`), permitiendo que el proceso reciba señales Unix (como `SIGTERM`) directamente como PID 1.
+B. La forma Shell es más rápida y segura.
+C. No existe ninguna diferencia técnica.
+D. La forma Executive solo funciona en sistemas macOS.
+ANSWER: A
+
+¿Qué comando se debe utilizar para verificar la configuración final consolidada de un archivo Docker Compose tras la resolución de variables y archivos de override?
+A. `docker compose config`
+B. `docker compose check`
+C. `docker compose validate`
+D. `docker compose print`
+ANSWER: A
+
+¿Cuál es el beneficio de implementar un script de automatización de despliegue (`deploy.sh`) con validación de salud (`healthcheck`)?
+A. Garantiza despliegues sin interrupción del servicio (Zero-Downtime), asegurando que el nuevo contenedor responda correctamente antes de retirar la versión previa.
+B. Elimina la necesidad de usar imágenes Docker.
+C. Permite ejecutar aplicaciones sin conexión a internet.
+D. Reemplaza al servidor Nginx.
+ANSWER: A

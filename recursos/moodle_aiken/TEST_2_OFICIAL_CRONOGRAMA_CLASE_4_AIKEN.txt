@@ -1,0 +1,167 @@
+¿Qué sucede con los datos escritos dentro del sistema de archivos de un contenedor si este se destruye y no tiene volúmenes configurados?
+A. Se guardan automáticamente en la carpeta Documentos del usuario.
+B. Se pierden de forma permanente debido a la naturaleza efímera y volátil del almacenamiento del contenedor.
+C. Docker los almacena en un servidor de soporte en la nube.
+D. Se respaldan en un archivo .zip oculto.
+ANSWER: B
+
+¿Cuál es la diferencia arquitectónica entre un Volumen Nombrado (Named Volume) y un Bind Mount?
+A. Los volúmenes nombrados son gestionados por Docker en una ruta interna reservada del Host (/var/lib/docker/volumes/); los bind mounts enlazan una ruta o carpeta específica definida por el usuario.
+B. Los bind mounts borran los datos al apagar el equipo.
+C. Los volúmenes nombrados solo funcionan en sistemas Windows.
+D. Los bind mounts consumen el doble de memoria RAM.
+ANSWER: A
+
+En qué ruta predeterminada del sistema de archivos de Linux gestiona Docker los Volúmenes Nombrados?
+A. /var/lib/docker/volumes/
+B. /etc/docker/storage/
+C. /tmp/docker/volumes/
+D. /home/user/.docker/data/
+ANSWER: A
+
+Qué comando permite inspeccionar la lista de contenedores conectados a una red virtual de Docker y conocer sus direcciones IP internas?
+A. docker network ls
+B. docker network inspect <nombre_red>
+C. docker network status
+D. docker ip show
+ANSWER: B
+
+En qué escenario de trabajo se recomienda utilizar un Bind Mount (ejemplo: ./app:/app) en lugar de un Volumen Nombrado?
+A. En servidores de producción con bases de datos transaccionales masivas.
+B. En entornos de desarrollo local para permitir recarga en vivo (hot-reloading) del código sin reconstruir la imagen.
+C. Para almacenar claves criptográficas secretas del Kernel.
+D. Exclusivamente cuando no hay conexión a Internet.
+ANSWER: B
+
+Cómo resuelve Docker la comunicación entre contenedores conectados a una misma red bridge personalizada?
+A. Mediante un servidor DNS externo en la nube pública.
+B. Mediante el servidor DNS embebido en el motor de Docker que resuelve automáticamente los nombres de contenedor o servicios en sus IPs privadas.
+C. Modificando manualmente el archivo /etc/hosts de la máquina anfitriona.
+D. Transmitiendo paquetes broadcast por todos los adaptadores físicos.
+ANSWER: B
+
+Si ejecutas dos contenedores en la red bridge por defecto llamada 'bridge', ¿por qué NO se pueden comunicar usando sus nombres de contenedor?
+A. Porque la red bridge por defecto no incluye resolución DNS automática; solo permite resolución por nombre en redes personalizadas (user-defined bridges).
+B. Porque los nombres de contenedor están prohibidos en Linux.
+C. Porque la red bridge por defecto solo soporta tráfico UDP.
+D. Porque se requiere obligatoriamente una cuenta de pago en Docker Hub.
+ANSWER: A
+
+Qué comando se utiliza para crear una nueva red virtual personalizada de tipo bridge en Docker?
+A. docker network create --driver bridge mi_red
+B. docker run network bridge mi_red
+C. docker init network mi_red
+D. docker make net bridge mi_red
+ANSWER: A
+
+Cuál es la sintaxis correcta para declarar un volumen de solo lectura (read-only) en la sección volumes de docker-compose.yml?
+A. ./datos:/app/datos:ro
+B. ./datos:/app/datos:readonly
+C. ./datos:/app/datos:lock
+D. ./datos:/app/datos:safe
+ANSWER: A
+
+Qué comando permite realizar un respaldo lógico (backup SQL) de una base de datos PostgreSQL en ejecución dentro de un contenedor?
+A. docker cp postgres:/db.sql .
+B. docker exec -t contenedor_postgres pg_dump -U usuario_db nombre_db > backup.sql
+C. docker commit contenedor_postgres backup.sql
+D. docker export contenedor_postgres > backup.sql
+ANSWER: B
+
+Cómo se restaura un archivo de backup SQL (backup.sql) dentro de un contenedor PostgreSQL en ejecución?
+A. docker import backup.sql contenedor_postgres
+B. cat backup.sql | docker exec -i contenedor_postgres psql -U usuario_db -d nombre_db
+C. docker run -v backup.sql postgres:16
+D. docker restore contenedor_postgres backup.sql
+ANSWER: B
+
+Qué instrucción de Dockerfile o sección de Compose permite monitorear periódicamente si el proceso dentro del contenedor responde adecuadamente?
+A. CHECKPOINT
+B. HEALTHCHECK
+C. STATUS_PROBE
+D. MONITOR_DAEMON
+ANSWER: B
+
+En una directiva HEALTHCHECK, qué función cumple el parámetro '--interval=30s'?
+A. El tiempo máximo que puede tardar el contenedor en compilar.
+B. La frecuencia de tiempo con la que Docker ejecutará la prueba de salud del contenedor.
+C. El tiempo que Docker esperará antes de reiniciar el servidor.
+D. El límite de tiempo de espera de la respuesta HTTP.
+ANSWER: B
+
+Qué estado muestra un contenedor en 'docker ps' cuando su instrucción HEALTHCHECK falla consecutivamente superando el umbral de 'retries'?
+A. exited
+B. unhealthy
+C. dead
+D. crashed
+ANSWER: B
+
+Qué comando se debe ejecutar para eliminar un volumen nombrado que ya no está en uso por ningún contenedor?
+A. docker volume rm <nombre_volumen>
+B. docker volume delete <nombre_volumen>
+C. docker volume drop <nombre_volumen>
+D. docker volume kill <nombre_volumen>
+ANSWER: A
+
+Qué comando de mantenimiento de Docker elimina de una sola vez todos los volúmenes nombrados huérfanos que no estén asociados a ningún contenedor?
+A. docker volume clean --force
+B. docker volume prune
+C. docker storage reset
+D. docker system wipe
+ANSWER: B
+
+Si conectas un contenedor a dos redes bridge diferentes ('frontend_net' y 'backend_net'), ¿qué ocurre a nivel de interfaces de red?
+A. El contenedor genera un error de conflicto de enrutamiento y se detiene.
+B. El contenedor obtiene dos interfaces de red virtuales internas (eth0 y eth1), cada una con su propia IP en cada segmento.
+C. El contenedor se fusiona con el switch físico del Host.
+D. Las dos redes se unen automáticamente en una sola red pública.
+ANSWER: B
+
+Qué driver de red de Docker desactiva completamente la pila de red para el contenedor, dejándolo totalmente aislado del exterior y de otros contenedores?
+A. bridge
+B. none
+C. host
+D. overlay
+ANSWER: B
+
+Qué ventaja ofrece el driver de red 'host' en comparación con el driver 'bridge' en Linux?
+A. Elimina la capa de virtualización NAT de iptables, ofreciendo mayor rendimiento de red a costa de perder aislamiento de puertos.
+B. Cifra automáticamente todos los paquetes TCP con TLS.
+C. Permite conectar contenedores en diferentes continentes sin internet.
+D. Asigna automáticamente una dirección MAC física del router.
+ANSWER: A
+
+Dónde almacena PostgreSQL internamente sus tablas y datos por defecto dentro del contenedor oficial?
+A. /var/lib/postgresql/data
+B. /etc/postgresql/database
+C. /opt/postgres/storage
+D. /usr/share/postgresql/tables
+ANSWER: A
+
+Por qué se debe utilizar un Volumen Nombrado y no un Bind Mount para almacenar la carpeta de datos de PostgreSQL (/var/lib/postgresql/data) en producción?
+A. Porque los bind mounts no permiten escribir archivos binarios.
+B. Porque los volúmenes nombrados garantizan compatibilidad nativa de permisos y rendimiento óptimo del sistema de archivos POSIX administrado por Docker.
+C. Porque PostgreSQL prohíbe el uso de rutas locales.
+D. Porque los bind mounts se borran automáticamente cada 24 horas.
+ANSWER: B
+
+Qué comando permite conectar en caliente un contenedor en ejecución a una red existente sin necesidad de reiniciarlo?
+A. docker network join <red> <contenedor>
+B. docker network connect <red> <contenedor>
+C. docker network attach <red> <contenedor>
+D. docker network link <red> <contenedor>
+ANSWER: B
+
+Qué herramienta o estrategia se utiliza para respaldar un volumen nombrado sin entrar al host (/var/lib/docker/volumes)?
+A. Ejecutar un contenedor auxiliar temporal con '--volumes-from' o montando el volumen y ejecutando 'tar' hacia una carpeta del Host.
+B. Copiar la carpeta /var/run/docker.sock a un pendrive USB.
+C. Subir el contenedor a Docker Hub con 'docker push'.
+D. Renombrar el volumen con 'docker volume mv'.
+ANSWER: A
+
+Si un contenedor muestra el error 'bind: address already in use' al arrancar, ¿cuál es la razón técnica?
+A. El contenedor superó el límite de memoria RAM.
+B. El puerto del Host especificado en el mapeo '-p HOST:CONTAINER' ya está siendo utilizado por otro proceso o contenedor.
+C. El disco duro del anfitrión se quedó sin espacio libre.
+D. La imagen de Docker está corrupta.
+ANSWER: B
