@@ -27,7 +27,7 @@ lab4/
 ## Paso 1: Preparar y levantar
 
 ```bash
-cd laboratorios/sesion-final/labs-finales/lab4
+cd codigo/sesion6
 cp .env.example .env
 docker compose -f docker-compose.prod.yml up -d --build
 ```

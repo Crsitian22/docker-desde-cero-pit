@@ -29,7 +29,7 @@ mkdir flask-versionado
 cd flask-versionado
 ```
 
-Archivos base en [`../../codigo/sesion2/`](../../codigo/sesion2/):
+Archivos base en [`../codigo/sesion2/`](../codigo/sesion2/):
 
 ```bash
 docker build -t mi-flask:v1 .
